@@ -1,29 +1,48 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-signup',
   templateUrl: './login-signup.component.html',
   styleUrls: ['./login-signup.component.css']
 })
 export class LoginSignupComponent {
-  response: any;
-  
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient, private router: Router
+    // private navCtrl: NavController
   ) {
   }
   
-  signIn(email: HTMLInputElement, password: HTMLInputElement){
+  async signIn(email: HTMLInputElement, password: HTMLInputElement){
     //http request
-    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/getall`).subscribe((data) => {
-      if (typeof data === 'string') {
-        this.response = JSON.parse(data);
-        console.log(this.response)
+    console.log(email.value)
+    console.log(password.value)
+
+    const body = { 
+      'email': email.value.toString(),
+      'password': password.value.toString()
+    };
+
+    try {
+      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/employee/login`, body, { observe: 'response' }).toPromise();
+      if (response !== undefined) {
+        console.log(response.status);
+        // Access response properties as needed
+        if(response.status === 200){
+          //go to dashboard
+          this.router.navigate(['/dashboard']);
+        } else {
+          //stay on the login form
+        }
       } else {
-        this.response = Object.values(data);
-        console.log(this.response)
+        // Handle undefined response
+        console.log('undefined')
       }
-    });
+    } catch (error) {
+      console.log(error);
+      // Handle the error
+    }
   }
   
   goToSignIn(container:HTMLDivElement){

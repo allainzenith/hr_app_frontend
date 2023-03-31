@@ -21,14 +21,15 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form>
+            <div class="form">
                 <img src="assets/img/logo.png">
                 <h1>Log In  </h1>        
                 <input type="email" placeholder="Email" #email/>
                 <input type="password" placeholder="Password" #password/>
                 <a href="#">Forgot your password?</a>
+                <!-- <button type="submit">Log In</button> -->
                 <button (click)="signIn(email, password)">Log In</button>
-            </form>
+            </div>
         </div>
         <div class="overlay-container">
             <div class="overlay">
