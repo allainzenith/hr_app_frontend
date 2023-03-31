@@ -27,13 +27,14 @@ export class LoginSignupComponent {
     try {
       const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/employee/login`, body, { observe: 'response' }).toPromise();
       if (response !== undefined) {
-        console.log(response.status);
+        
         // Access response properties as needed
-        if(response.status === 200){
-          //go to dashboard
-          this.router.navigate(['/dashboard']);
+        if ((response.body as any).data.length !== 0) {
+          console.log('data')
+          console.log((response.body as any).data)
+          this.router.navigate(['/dashboard'])
         } else {
-          //stay on the login form
+          console.log('user not found');
         }
       } else {
         // Handle undefined response
