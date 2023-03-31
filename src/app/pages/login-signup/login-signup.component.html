@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HR Application</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    
+    <div #container class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <img src="assets/img/logo.png">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Register</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form>
+                <img src="assets/img/logo.png">
+                <h1>Log In  </h1>        
+                <input type="email" placeholder="Email" #email/>
+                <input type="password" placeholder="Password" #password/>
+                <a href="#">Forgot your password?</a>
+                <button (click)="signIn(email, password)">Log In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Log In Here!</h1>
+                    <p>Lorem Ipsum ...</p>
+                    <button class="ghost" (click)="goToSignUp(container)">Log In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Register Here!</h1>
+                    <p>Lorem Ipsum ...</p>
+                    <button class="ghost" (click)="goToSignIn(container)">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
