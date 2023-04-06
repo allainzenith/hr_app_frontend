@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-signup',
@@ -14,30 +14,40 @@ export class LoginSignupComponent {
   ) {
   }
   
-  async signIn(email: HTMLInputElement, password: HTMLInputElement){
-    //http request
+  async signIn(email: HTMLInputElement, password: HTMLInputElement) {
+    // http request
     console.log(email.value)
     console.log(password.value)
+    
 
-    const body = { 
-      'email': email.value.toString(),
-      'password': password.value.toString()
-    };
+    //formdata
+    var body = new FormData();
+    body.append("username", email.value.toString());
+    body.append("password", password.value.toString());
+    body.append("grant_type", "password");
 
+    //set the username and password
+    const client = 'client';
+    const secret = 'secret';
+  
+    //encode the clientId and secret as base64
+    const base64Credential = btoa(`${client}:${secret}`);
+  
+    const headers = new HttpHeaders({
+      'Authorization': `Basic ${base64Credential}`
+    });
+  
     try {
-      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/employee/login`, body, { observe: 'response' }).toPromise();
+      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/oauth/token`, body, { headers, observe: 'response' }).toPromise();
       if (response !== undefined) {
-        
-        // Access response properties as needed
-        if ((response.body as any).data.length !== 0) {
-          console.log('data')
-          console.log((response.body as any).data)
-          this.router.navigate(['/dashboard'])
-        } else {
-          console.log('user not found');
-        }
+        console.log('data')
+        console.log((response.body as any))
+
+        //store the token in local storage
+        localStorage.setItem('token', (response.body as any).access_token);
+        this.router.navigate(['/dashboard'])
+
       } else {
-        // Handle undefined response
         console.log('undefined')
       }
     } catch (error) {

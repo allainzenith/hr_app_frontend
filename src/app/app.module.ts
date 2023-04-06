@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { NavController } from '@ionic/angular';
+// import { NavController } from '@ionic/angular';
 @NgModule({
   declarations: [
     AppComponent,
