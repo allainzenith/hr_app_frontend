@@ -11,22 +11,20 @@
     
     <div #container class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
-                <img src="assets/img/logo.png">
-                <h1>Create Account</h1>
-                <input type="text" placeholder="Name" />
+            <form class="form"action="#">
+                <img src="assets/img/logo.png" class="img-forgot">
+                <h3>Forgot your password? Don't Worry!</h3>
+                <h4>Send us your email so we can help you.</h4>
                 <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Register</button>
+                <button>Send Email</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
             <div class="form">
-                <img src="assets/img/logo.png">
+                <img src="assets/img/logo.png" class="img-log">
                 <h1>Log In  </h1>        
                 <input type="email" placeholder="Email" #email/>
                 <input type="password" placeholder="Password" #password/>
-                <a href="#">Forgot your password?</a>
                 <!-- <button type="submit">Log In</button> -->
                 <button (click)="signIn(email, password)">Log In</button>
             </div>
@@ -39,7 +37,7 @@
                     <button class="ghost" (click)="goToSignUp(container)">Log In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Register Here!</h1>
+                    <h1>Forgot Password ?</h1>
                     <p>Lorem Ipsum ...</p>
                     <button class="ghost" (click)="goToSignIn(container)">Register</button>
                 </div>
