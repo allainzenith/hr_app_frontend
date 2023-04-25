@@ -19,7 +19,7 @@
                     <div class="dash-title">
                         <button class="newTicket"><a href="#">Cancel Ticket</a></button>
                     </div>
-                    <h3>This is the subject of the ticket.</h3>
+                    <h3>{{ subject }}</h3>
                     <table>
                         <tr>
                             <td>Assignee</td>
@@ -47,24 +47,13 @@
                     </table>
                     <hr>
                 </div>
-                <div class="thread2">
-                    <p>Jane Doe created this ticket. <span class="sgray">2 days ago</span></p>
-                    <p><span class="sbold">HR update:</span> Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat.<span class="sgray">1 day ago</span></p>
-                    <p><span class="sbold">Employee update:</span> Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat.<span class="sgray">16h</span></p>
-                    <p class="italic">This ticket has been marked as resolved</p>
-                    <textarea placeholder="Provide a feed back"></textarea><br>
-                    <button class="send"><a href="#">Send</a></button>
-                        
+                <div *ngIf="response && response[0]">
+                    <div class="thread2">
+                        <p>Jane Doe created this ticket. <span class="sgray">2 days ago</span></p>
+                        <p *ngFor="let thread of response[0]"><span class="sbold">HR update: </span>{{ thread?.thread_content }} | <span class="sgray">{{ thread?.created_at }}</span></p>
+                        <textarea placeholder="Provide a feed back"></textarea><br>
+                        <button class="send"><a href="#">Send</a></button>     
+                    </div>
                 </div>
             </div>
         </main>

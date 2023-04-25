@@ -116,6 +116,7 @@ export class TicketlistHradminComponent implements OnInit{
       ticketID: ticket.ticketID,
       category: ticket.category,
       description: ticket.description,
+      subject: ticket.subject,
       status: ticket.status,
       date_needed: ticket.date_needed,
       assigned_to: ticket.assigned_to,
