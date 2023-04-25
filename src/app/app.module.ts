@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
 // import { NavController } from '@ionic/angular';
 @NgModule({
   declarations: [
     AppComponent,
     LoginSignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardHrComponent,
   ],
   imports: [
     BrowserModule,
