@@ -55,8 +55,8 @@
                                 <span *ngIf="ticket?.priority === 'low'" style="font-size:12px; padding:3px 9px; background-color: #B1DD9E; border: 3px solid #97CF8A; border-radius: 15px;">low</span>
                             </td>
                               <td>
-                                <span *ngIf="ticket?.status === '1'" style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
-                                <span *ngIf="ticket?.status === '2'" style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                                <span *ngIf="ticket?.status === '2'" style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                <span *ngIf="ticket?.status === '1'" style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
                             </td>
 
                               <td>{{ ticket?.date_needed }}</td>
@@ -64,7 +64,7 @@
                                 style="width:25px;border: none;
                                 background-color: transparent;
                                 text-decoration: none;">
-                                    <img src="/assets/icons/eye.svg" alt="My Icon">
+                                    <img src="/assets/icons/eye.svg" alt="My Icon" (click)="viewTicket(ticket)">
                                 </button>
                               </td>
                             </tr>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ticketlist-hradmin',
@@ -10,7 +11,7 @@ export class TicketlistHradminComponent implements OnInit{
   response:any;
 
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient, private router: Router){
   
   }
   async ngOnInit() {
@@ -109,7 +110,19 @@ export class TicketlistHradminComponent implements OnInit{
     }
   }
 
-
+  viewTicket(ticket:any){
+    console.log('okay')
+    const data = {
+      ticketID: ticket.ticketID,
+      category: ticket.category,
+      description: ticket.description,
+      status: ticket.status,
+      date_needed: ticket.date_needed,
+      assigned_to: ticket.assigned_to,
+    }
+    console.log(data)
+    this.router.navigate(['/ticket_thread'], { queryParams: data })
+  }
   
   
 }
