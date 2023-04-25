@@ -7,8 +7,8 @@ import { ReportsComponent } from './pages/reports/reports.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
 import { HeaderHrempComponent } from './components/header-hremp/header-hremp.component';
-import { DashboardEmpComponent } from './pages/dashboard-emp/dashboard-emp.component';
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component';
+import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'empheader', component: HeaderEmpComponent },
   { path: 'hrempheader', component: HeaderHrempComponent },
   { path: 'hrdashboard', component: DashboardHrComponent },
-  { path: 'empdashboard' , component: DashboardEmpComponent},
   { path: 'ticket_thread' , component: TicketThreadEmpComponent},
+  { path: 'ticketlist_hradmin' , component: TicketlistHradminComponent},
 ];
 
 @NgModule({

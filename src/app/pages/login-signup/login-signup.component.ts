@@ -52,6 +52,10 @@ export class LoginSignupComponent {
           this.router.navigate(['/hrdashboard']);
         }
 
+        else if((response.body as any).emp_role === 'admin'){
+          this.router.navigate(['/dashboard']);
+        }
+
       } else {
         console.log('undefined')
       }
