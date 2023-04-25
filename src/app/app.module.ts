@@ -18,8 +18,8 @@ import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.componen
     DashboardComponent,
     NavbarComponent,
     ReportsComponent,
-    HeaderComponent
-    DashboardHrComponent,
+    HeaderComponent,
+    DashboardHrComponent
   ],
   imports: [
     BrowserModule,
