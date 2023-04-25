@@ -15,6 +15,7 @@ import { NavbarHrempComponent } from './components/navbar-hremp/navbar-hremp.com
 import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
 import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component';
 import { DashboardEmpComponent } from './pages/dashboard-emp/dashboard-emp.component';
+import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DashboardEmpComponent } from './pages/dashboard-emp/dashboard-emp.compo
     NavbarHrempComponent,
     HeaderEmpComponent,
     NavbarEmpComponent,
-    DashboardEmpComponent
+    DashboardEmpComponent,
+    TicketThreadEmpComponent
   ],
   imports: [
     BrowserModule,
