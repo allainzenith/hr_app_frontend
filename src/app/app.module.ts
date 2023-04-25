@@ -9,7 +9,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { HeaderComponent } from './components/header/header.component';
-// import { NavController } from '@ionic/angular';
+import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
     NavbarComponent,
     ReportsComponent,
     HeaderComponent
+    DashboardHrComponent,
   ],
   imports: [
     BrowserModule,
