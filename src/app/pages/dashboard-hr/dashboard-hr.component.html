@@ -68,18 +68,19 @@
                 <div class="btr">
                     <p>Task assigned to you</p>
                     <div class="dropdown">
-                        <select name="All" id="" value="All">
-                            <option value="All">All</option>
-                            <option value="Aging">Aging</option>
-                            <option value="Due Date">Due Date</option>
-                            <option value="Status">Status</option>
-                            <option value="Category">Category</option>
+                        <select name="All" id="" value="All" (change)="onSelectionChange($event)">
+                          <option value="All">All</option>
+                          <option value="Aging">Aging</option>
+                          <!-- <option value="Due Date">Due Date</option>
+                          <option value="Status">Status</option>
+                          <option value="Category">Category</option> -->
                         </select>
-                    </div>
+                    </div>                      
+     
                 </div>
                 <div class="category">               
                     <div class="table-container">
-                        <table>
+                        <table *ngIf="response && response[0]">
                             <tr>
                               <th>ID</th>
                               <th>Subject</th>
@@ -89,21 +90,30 @@
                               <th>Due Date</th>
                               <th>Actions</th>
                             </tr>
-                            <tr>
-                              <td>1</td>
-                              <td>Lorem Ipsum..</td>
-                              <td>Engagement (RNR)</td>
+                            <tr *ngFor="let ticket of response[0]">
+                              <td>{{ ticket?.ticketID }}</td>
+                              <td>{{ ticket?.description }}</td>
+                              <td>{{ ticket?.category }}</td>
                               <td>
-                                <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
-                              </td>
+                                <span *ngIf="ticket?.priority === 'high'" style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                <span *ngIf="ticket?.priority === 'mid'" style="font-size:12px; padding:3px 9px; background-color: #F7BE6D; border: 3px solid #FBB347; border-radius: 15px;">mid</span>
+                                <span *ngIf="ticket?.priority === 'low'" style="font-size:12px; padding:3px 9px; background-color: #B1DD9E; border: 3px solid #97CF8A; border-radius: 15px;">low</span>
+                            </td>
                               <td>
-                                <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                <span *ngIf="ticket?.status === '1'" style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                <span *ngIf="ticket?.status === '2'" style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
                             </td>
 
-                              <td>2023-04-29</td>
-                              <td>i</td>
+                              <td>{{ ticket?.date_needed }}</td>
+                              <td><button 
+                                style="width:25px;border: none;
+                                background-color: transparent;
+                                text-decoration: none;">
+                                    <img src="/assets/icons/eye.svg" alt="My Icon">
+                                </button>
+                              </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                               <td>2</td>
                               <td>Lorem Ipsum..</td>
                               <td>Engagement (RNR)</td>
@@ -167,20 +177,10 @@
                                 </td>
                                 <td>2023-04-29</td>
                                 <td>i</td>
-                              </tr>
+                              </tr> -->
 
                           </table>
-                        <!-- Assuming 'tickets' is an array of Ticket objects -->
-                        <ul *ngIf="response && response[0]">
-                            <li *ngFor="let ticket of response[0]">                                                             
-                            Ticket ID: {{ ticket?.ticketID }}
-                            Status: {{ ticket?.status }}
-                            Description: {{ ticket?.description }}
-                            Category: {{ ticket?.category }}
-                            Assigned To: {{ ticket?.assigned_to }}
-                            <!-- Add more properties as needed -->
-                            </li>
-                        </ul>
+
                         
                     </div>
                 </div>
