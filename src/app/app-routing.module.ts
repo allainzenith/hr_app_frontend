@@ -5,11 +5,16 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
+import { HeaderHrempComponent } from './components/header-hremp/header-hremp.component';
+
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'reports', component: ReportsComponent },
   { path: 'header', component: HeaderComponent },
+  { path: 'empheader', component: HeaderEmpComponent },
+  { path: 'hrempheader', component: HeaderHrempComponent },
   { path: 'hrdashboard', component: DashboardHrComponent },
 ];
 
