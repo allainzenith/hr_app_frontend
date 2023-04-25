@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Component({
-  selector: 'app-dashboard-hr',
-  templateUrl: './dashboard-hr.component.html',
-  styleUrls: ['./dashboard-hr.component.css']
+  selector: 'app-ticketlist-hradmin',
+  templateUrl: './ticketlist-hradmin.component.html',
+  styleUrls: ['./ticketlist-hradmin.component.css']
 })
-export class DashboardHrComponent implements OnInit {
+export class TicketlistHradminComponent implements OnInit{
   response:any;
 
 
@@ -56,20 +55,14 @@ export class DashboardHrComponent implements OnInit {
 
   async getAllTickets(){
     const token = this.token();
-    const empID = await this.empID();
-    const emp_role = await this.emp_role();
 
-    const usertype = emp_role == 'hr' ? 'assigned_to' : 'empID';
-
-    console.log('this is the empID'+empID)
-    console.log('this is the usertype'+usertype)
     const options = {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + token
       })
     };
     
-    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/findAllTickets/${usertype}/${empID}`, options).subscribe(response => {
+    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/getall`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
@@ -84,20 +77,14 @@ export class DashboardHrComponent implements OnInit {
 
   async getAgingTickets(){
     const token = this.token();
-    const empID = await this.empID();
-    const emp_role = await this.emp_role();
 
-    const usertype = emp_role == 'hr' ? 'assigned_to' : 'empID';
-
-    console.log('this is the empID'+empID)
-    console.log('this is the usertype'+usertype)
     const options = {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + token
       })
     };
     
-    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/findAgingTickets/${usertype}/${empID}`, options).subscribe(response => {
+    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/getall/aging`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
@@ -113,9 +100,11 @@ export class DashboardHrComponent implements OnInit {
     const target = event.target as HTMLSelectElement;
 
     if(target.value === 'All'){
+      console.log(target.value)
       this.getAllTickets();
     }
     else if(target.value === 'Aging'){
+      console.log(target.value)
       this.getAgingTickets();
     }
   }
@@ -123,8 +112,4 @@ export class DashboardHrComponent implements OnInit {
 
   
   
-  
-
-
-
 }
