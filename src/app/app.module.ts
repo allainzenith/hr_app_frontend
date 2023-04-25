@@ -14,6 +14,9 @@ import { NavbarHrempComponent } from './components/navbar-hremp/navbar-hremp.com
 import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
 import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component';
 import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
+import { DashboardEmpComponent } from './pages/dashboard-emp/dashboard-emp.component';
+import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.co
     HeaderEmpComponent,
     NavbarEmpComponent,
     TicketlistEmpComponent
+    DashboardEmpComponent,
+    TicketThreadEmpComponent
   ],
   imports: [
     BrowserModule,
