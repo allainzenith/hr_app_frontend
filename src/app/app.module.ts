@@ -31,7 +31,7 @@ import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-threa
     NavbarHrempComponent,
     HeaderEmpComponent,
     NavbarEmpComponent,
-    TicketlistEmpComponent
+    TicketlistEmpComponent,
     DashboardEmpComponent,
     TicketThreadEmpComponent
   ],
