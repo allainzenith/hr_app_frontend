@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginSignupComponent } from './pages/login-signup/login-signup.component';
@@ -14,6 +13,7 @@ import { HeaderHrempComponent } from './components/header-hremp/header-hremp.com
 import { NavbarHrempComponent } from './components/navbar-hremp/navbar-hremp.component';
 import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
 import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component';
+import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component
     HeaderHrempComponent,
     NavbarHrempComponent,
     HeaderEmpComponent,
-    NavbarEmpComponent
+    NavbarEmpComponent,
+    TicketlistEmpComponent
   ],
   imports: [
     BrowserModule,

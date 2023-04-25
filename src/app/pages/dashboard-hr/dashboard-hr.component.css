@@ -229,6 +229,8 @@ main{
 .btr{
     display: flex;
     margin-bottom: .1rem;
+    width: 97%;
+    position: relative;
 }
 
 .dropdown{
@@ -236,6 +238,9 @@ main{
     font-size: 20px;
     margin-left: 45rem;
     padding: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .table-container{
