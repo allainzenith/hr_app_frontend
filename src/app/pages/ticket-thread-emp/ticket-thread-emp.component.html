@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <app-header></app-header>
+    <div class="main-content">
+        <main>
+            <div class="thread-container">
+                <div class="thread1">
+                    <hr>
+                    <div class="dash-title">
+                        <button class="newTicket"><a href="#">Cancel Ticket</a></button>
+                    </div>
+                    <h3>{{ subject }}</h3>
+                    <table>
+                        <tr>
+                            <td>Assignee</td>
+                            <td>{{ assigned_to }}</td>
+                        </tr>
+                        <tr>
+                            <td>Category</td>
+                            <td>{{ category }}</td>
+                        </tr>
+                        <tr>
+                            <td>Due Date</td>
+                            <td>{{ date_needed }}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>
+                                <p *ngIf="status === '1'" class="status pending">Ongoing</p>
+                                <p *ngIf="status === '2'" class="status resolved">Resolved</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td> {{ description }} </td>
+                        </tr>
+                    </table>
+                    <hr>
+                </div>
+                <div *ngIf="response && response[0]">
+                    <div class="thread2">
+                        <p>Jane Doe created this ticket. <span class="sgray">2 days ago</span></p>
+                        <p *ngFor="let thread of response[0]"><span class="sbold">HR update: </span>{{ thread?.thread_content }} | <span class="sgray">{{ thread?.created_at }}</span></p>
+                        <textarea placeholder="Provide a feed back"></textarea><br>
+                        <button class="send"><a href="#">Send</a></button>     
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

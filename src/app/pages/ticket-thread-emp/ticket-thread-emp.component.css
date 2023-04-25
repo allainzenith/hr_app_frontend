@@ -1,3 +1,5 @@
+
+
 *{
     text-decoration: none;
     list-style-type: none;
@@ -5,7 +7,6 @@
     padding: 0;
     margin: 0;
 }
-
 .logo{
     padding-top: 20px;
     width: 220px;
@@ -33,7 +34,7 @@
     padding: 0rem 1rem;
 }
 .sidebar-header p{
-    font-size:15px;
+    font-size:14px;
     color: #595d63;
 }
 .sidebar-menu{
@@ -73,6 +74,7 @@
     position: relative;
     margin-left:240px;
     transition: margin-left 500ms;
+ 
 }
 #sidebar-toggle:checked ~ .main-content{
     margin-left: 60px;
@@ -95,7 +97,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
- 
     transition: left 500ms;
 }
 .social-icons{
@@ -115,10 +116,12 @@ main{
     background: #F0F6F7;
     min-height: 88vh;
     padding-left: 2rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 .dash-title{
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 .dash-title p{
@@ -129,44 +132,7 @@ main{
 .dash-title h2{
     color: #222222;
 }
-.body-container{
-   width: 100%;
-    display: flex;
-}
 
-.dash-cards-1{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 60%;
-    color: white;
-    margin-bottom: 5px;
-}
-.dash-cards-1 h1{
-    font-size: 45px;
-}
-.section1,.section2{
-    display: flex;
-    width: 140%;
-    height: 15vh;
-}
-
-.card-single{
-    background: #EC2224;
-    border-radius: 7px;
-    width: 33%;
-    margin-right: 1rem;
-}
-
-.updates{
-    color: #222222;
-    text-align: center;
-    border-radius: 7px;
-    font-size: 2rem;
-    width: 35%;
-    height: 33vh;
-    background: #fff;   
-}
 @media only screen and (max-width:1200px){
     .sidebar{
         width: 60px;
@@ -213,56 +179,121 @@ main{
         left:  60px;
     }
 }
+.newTicket{
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: red;
+    border: 0;
+    margin: .1rem 2.5rem 0 80%;
 
-.dash-footer p{
-    margin-top: .8rem;
-    color: #222222;
-    font-size: 20px;
-}
-.category{
-    display: flex;
-    width: 96%;
-    flex-wrap: flex;
-    justify-content: space-around;
 }
 
-.btr{
-    display: flex;
-    margin-bottom: .1rem;
-    width: 97%;
-    position: relative;
-}
+a{
+    text-decoration: none;
+    color: white;
 
-.dropdown{
-    display: flex;
-    font-size: 20px;
-    margin-left: 45rem;
-    padding: 15px;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
+.thread-container{
+    margin: 2rem 1rem 1rem 10rem;
+    width: 70%;
+    height: 75vh;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: #fff ;
 
-.table-container{
-    background: #fff;
-    border-radius: 7px;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    overflow: scroll;
-    display: inline-block;
+}
+hr{
+    margin-top: 1rem;
+    color: #777777;
 }
 
 table{
-    border-collapse:collapse;
-    width: 100%;
+
+    border-collapse: collapse;
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+    color: #72777D;
 }
-tr,th,td{
-    padding: 7px;
-}
-table td{
+
+td{
+    padding: 3px;
+    vertical-align:top;
     font-size: 14px;
+}
+h3{
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+.status.pending {
+    background-color: #F05E16;
+    color: #fff;
+}
+
+.status.resolved {
+    background-color: rgb(6, 202, 49);
+    color: #fff;
+}
+
+.status {
+    padding: .1rem 0;
+    border-radius: 2rem;
+    text-align: center;
+    width: 20%;
+}
+input[type="date"]{
+    color: red;
+    border: none;
+    outline: none;
+}
+::-webkit-calendar-picker-indicator{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.thread2{
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 1rem;
+    height: 30vh;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.thread2 p{
+    font-size: 14px;
+    color: #222222;
+    margin-bottom: 2rem;
+    
+}
+
+textarea{
+    resize: none;
+    width: 100%;
+    height: 70px;
+    border: none;
+    background-color: #F0F6F7;
+}
+.sbold{
+    font-weight: bold;
+}
+.sgray{
+    color: #72777D;
+}
+.italic{
+    font-style: italic;
+    font-weight: bold;
+}
+.thread2 .send{
+    margin-top: 10px;
+    margin-left: 92%;
+    width: 70px;
+    height: 30px;
+    border-radius: 6px;
+    color: white;
+    background-color: red;
+    border:none;
 }

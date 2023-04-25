@@ -10,51 +10,18 @@
 </head>
 
 <body>
-    <app-header-hremp></app-header-hremp>
+    <app-header></app-header>
     <div class="main-content">
-        <main>
-            <div class="dash-title">
-                <h2>Welcome Back, Jane Dae.</h2>
-                <p>Here's what's going on while you were gone</p>
-            </div>  
-            <div class="body-container">
-                <!-- <div class="sections"> -->
-                    <div class="dash-cards-1">
-                        <div class="section1">
-                            <div class="card-single">
-                                <div class="card-boy">
-                                    <h1>123</h1>
-                                    <h4>Ongoing tickets</h4>
-                                </div>
-                            </div>
-                            <div class="card-single">
-                                <div class="card-boy">
-                                    <h1>12</h1>
-                                    <h4>Pending tickets</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="section2">
-                            <div class="card-single">
-                                <div class="card-boy">
-                                    <h1>1,234</h1>
-                                    <h4>Resolved tickets</h4>
-                                </div>
-                            </div>
-                            <div class="card-single">
-                                <div class="card-boy">
-                                    <h1>12</h1>
-                                    <h4>Cancelled request</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- </div> -->
-                    <div class="updates">
-                        <p>Recent Updates</p>
-                    </div>
+        <header>
+            <div>
+                <span><img src="assets/img/logo.png" class="logo"></span>
             </div>
+            <!-- <div class="social-icons">
+                <h3>JOHN DOE<h5>HR HEAD</h5></h3>
+                <div></div>
+            </div> -->
+        </header>
+        <main>
             <div class="dash-footer">
                 <div class="btr">
                     <p>Task assigned to you</p>
@@ -62,9 +29,6 @@
                         <select name="All" id="" value="All" (change)="onSelectionChange($event)">
                           <option value="All">All</option>
                           <option value="Aging">Aging</option>
-                          <!-- <option value="Due Date">Due Date</option>
-                          <option value="Status">Status</option>
-                          <option value="Category">Category</option> -->
                         </select>
                     </div>                      
      
@@ -100,7 +64,7 @@
                                 style="width:25px;border: none;
                                 background-color: transparent;
                                 text-decoration: none;">
-                                    <img src="/assets/icons/eye.svg" alt="My Icon">
+                                    <img src="/assets/icons/eye.svg" alt="My Icon" (click)="viewTicket(ticket)">
                                 </button>
                               </td>
                             </tr>

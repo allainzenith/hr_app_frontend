@@ -40,12 +40,21 @@ export class LoginSignupComponent {
     try {
       const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/oauth/token`, body, { headers, observe: 'response' }).toPromise();
       if (response !== undefined) {
-        console.log('data')
         console.log((response.body as any))
 
         //store the token in local storage
         localStorage.setItem('token', (response.body as any).access_token);
-        this.router.navigate(['/hrdashboard'])
+        localStorage.setItem('empID', (response.body as any).empID);
+        localStorage.setItem('emp_role', (response.body as any).emp_role);
+        localStorage.setItem('name', (response.body as any).name);
+
+        if((response.body as any).emp_role === 'hr'){
+          this.router.navigate(['/hrdashboard']);
+        }
+
+        else if((response.body as any).emp_role === 'admin'){
+          this.router.navigate(['/dashboard']);
+        }
 
       } else {
         console.log('undefined')
