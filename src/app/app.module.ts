@@ -10,6 +10,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
+import { HeaderHrempComponent } from './components/header-hremp/header-hremp.component';
+import { NavbarHrempComponent } from './components/navbar-hremp/navbar-hremp.component';
+import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
+import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.componen
     NavbarComponent,
     ReportsComponent,
     HeaderComponent,
-    DashboardHrComponent
+    DashboardHrComponent,
+    HeaderHrempComponent,
+    NavbarHrempComponent,
+    HeaderEmpComponent,
+    NavbarEmpComponent
   ],
   imports: [
     BrowserModule,
