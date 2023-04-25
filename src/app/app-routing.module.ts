@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: 'hrdashboard', component: DashboardHrComponent },
   { path: 'employee/tickets', component: TicketsEmployeeComponent },
   { path: 'modal', component: AddTicketComponent },
+  { path: 'hrreports', component: ReportsComponent },
+
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
 import { TicketsEmployeeComponent } from './pages/tickets-employee/tickets-employee.component';
 import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
+import { ReportsadminComponent } from './pages/reportsadmin/reportsadmin.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { AddTicketComponent } from './components/add-ticket/add-ticket.component
     DashboardHrComponent,
     AddTicketComponent,
     TicketsEmployeeComponent,
+    ReportsComponent,
+    ReportsadminComponent
   ],
   imports: [
     BrowserModule,
