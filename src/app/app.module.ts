@@ -33,7 +33,7 @@ import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlis
     AddTicketComponent,
     TicketsEmployeeComponent,
     ReportsComponent,
-    ReportsadminComponent
+    ReportsadminComponent,
     HeaderHrempComponent,
     NavbarHrempComponent,
     HeaderEmpComponent,
