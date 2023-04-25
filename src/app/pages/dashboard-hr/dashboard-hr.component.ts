@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,16 +8,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: './dashboard-hr.component.html',
   styleUrls: ['./dashboard-hr.component.css']
 })
+
 export class DashboardHrComponent implements OnInit {
   response:any;
 
 
-  constructor(private http: HttpClient){
-  
-  }
+  constructor(private http: HttpClient, private router: Router){}
   async ngOnInit() {
-    
     this.getAllTickets();
+    this.getEmployeesData();
   }
   
   async token(){
@@ -121,10 +121,15 @@ export class DashboardHrComponent implements OnInit {
   }
 
 
-  
-  
-  
+  getEmployeesData(){
 
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer` + localStorage.getItem('token')
+    });
 
-
+    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/tickets`, { headers}).subscribe(res => {
+      console.log(res)
+    });
+    
+  }
 }

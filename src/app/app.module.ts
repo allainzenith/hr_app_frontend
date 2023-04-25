@@ -9,6 +9,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
+import { TicketsEmployeeComponent } from './pages/tickets-employee/tickets-employee.component';
+import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
+import { ReportsadminComponent } from './pages/reportsadmin/reportsadmin.component';
 import { HeaderHrempComponent } from './components/header-hremp/header-hremp.component';
 import { NavbarHrempComponent } from './components/navbar-hremp/navbar-hremp.component';
 import { HeaderEmpComponent } from './components/header-emp/header-emp.component';
@@ -27,6 +30,10 @@ import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlis
     ReportsComponent,
     HeaderComponent,
     DashboardHrComponent,
+    AddTicketComponent,
+    TicketsEmployeeComponent,
+    ReportsComponent,
+    ReportsadminComponent
     HeaderHrempComponent,
     NavbarHrempComponent,
     HeaderEmpComponent,

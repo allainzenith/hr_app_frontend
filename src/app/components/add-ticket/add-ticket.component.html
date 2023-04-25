@@ -1,0 +1,47 @@
+<div id="container">
+    <div id="header">New Ticket</div>
+    <div id="content">
+        <form action="">
+            <div class="main">
+                <div class="input-fields">
+                    <label for="">Category</label>
+                    <select name="" id="" style="padding: 8px 15px; width: 100%; background: #F0F6F7; border: 1px solid #87bcd1;">
+                        <option value="">Engagement (RNR)</option>
+                        <option value="">Category 2</option>
+                        <option value="">Category 3</option>
+                        <option value="">Category 4</option>
+                    </select>
+                </div>
+                <div class="input-fields">
+                    <label for="">Assigned to</label>
+                    <select name="" id="" style="padding: 8px 15px; width: 100%; background: #F0F6F7; border: 1px solid #87bcd1;">
+                        <option value="">Jasmine Patalinghug</option>
+                        <option value="">Allain Sabandal</option>
+                        <option value="">Jomar Cuetara</option>
+                        <option value="">Kurt Capili</option>
+                    </select>
+                </div>
+                <div class="input-fields">
+                    <label for="">Subject</label>
+                    <input type="text">
+                </div>
+                <div class="input-fields">
+                    <label for="">Attach File</label>
+                    <input type="file" style="border: 1px solid #333; opacity: 50%;" class="file">
+                </div>       
+                <div class="textarea-input">
+                    <div class="bastahaha">
+                        <label for="">Description</label>
+                        <textarea name="" id="" cols="70" rows="4" style="background: #F0F6F7; border: 1px solid #87bcd1;"></textarea>
+                    </div>
+                </div>    
+            </div>   
+                 
+        </form>
+        <div id="actions">
+            <button class="cancel" (click)="modalService.showDialog = false">Cancel</button>
+            <button class="submit">File Ticket</button>
+        </div>
+    </div>
+    
+</div>
