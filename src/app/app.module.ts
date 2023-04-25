@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.component';
+import { TicketsEmployeeComponent } from './pages/tickets-employee/tickets-employee.component';
+import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DashboardHrComponent } from './pages/dashboard-hr/dashboard-hr.componen
     NavbarComponent,
     ReportsComponent,
     HeaderComponent,
-    DashboardHrComponent
+    DashboardHrComponent,
+    AddTicketComponent,
+    TicketsEmployeeComponent,
   ],
   imports: [
     BrowserModule,

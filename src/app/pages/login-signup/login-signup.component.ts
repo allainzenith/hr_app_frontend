@@ -45,7 +45,7 @@ export class LoginSignupComponent {
 
         //store the token in local storage
         localStorage.setItem('token', (response.body as any).access_token);
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/hrdashboard'])
 
       } else {
         console.log('undefined')
