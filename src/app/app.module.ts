@@ -22,6 +22,9 @@ import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlis
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
 
 
 @NgModule({
@@ -46,7 +49,10 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     TicketlistHradminComponent,
     AddCategoryComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    UserListHrempComponent,
+    UserListHradmComponent,
+    AddUsersComponent
   ],
   imports: [
     BrowserModule,
