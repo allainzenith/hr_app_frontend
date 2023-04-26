@@ -20,6 +20,9 @@ import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.co
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component'; 
 import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
 import { FormsModule } from '@angular/forms';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { FormsModule } from '@angular/forms';
     NavbarEmpComponent,
     TicketlistEmpComponent,
     TicketThreadEmpComponent,
-    TicketlistHradminComponent
+    TicketlistHradminComponent,
+    AddCategoryComponent,
+    ProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

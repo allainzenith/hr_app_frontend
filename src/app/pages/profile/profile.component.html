@@ -1,0 +1,81 @@
+<!-- <app-add-ticket *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-ticket> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <title>Tickets</title>
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span>Jane Dae</span>
+            </h3>
+            <p>Employee</p>
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/employee/tickets">
+                        <span class="ti-home"></span>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-user"></span>
+                        <span>Profile</span>
+                    </a>
+                </li>   
+                <li>
+                    <a href="">
+                        <span class="ti-arrow-circle-right"></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>   
+    
+    <div class="main-content">
+        <header>
+            <div>
+                <span><img src="assets/img/logo.png" class="logo"></span>
+            </div>
+        </header>
+        <main>
+            <div class="profile-content">
+                <!-- <div class="btn-container">                   
+                    <button type="submit" (click)="modalService.showDialog = true">
+                        New Ticket
+                    </button>
+                </div> -->
+                <div class="prof-container">
+                    <p>Profile Settings</p>
+                    <div>
+                        <p>Jane Doe</p>
+                        <p>Employee, Engineer</p>
+                        <p>janedoe@gmail.com</p>
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div> 
+            </div>    
+        </main>
+    </div>
+
+</body>
+
+</html>

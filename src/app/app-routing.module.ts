@@ -11,6 +11,11 @@ import { HeaderEmpComponent } from './components/header-emp/header-emp.component
 import { HeaderHrempComponent } from './components/header-hremp/header-hremp.component';
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component';
 import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
+import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
+import { CategorylistAdmnComponent } from './pages/categorylist-admn/categorylist-admn.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -26,6 +31,11 @@ const routes: Routes = [
   { path: 'ticket_thread' , component: TicketThreadEmpComponent},
   { path: 'ticketlist_hradmin' , component: TicketlistHradminComponent},
   { path: 'ticketlist_employee' , component: TicketsEmployeeComponent},
+  { path: 'categories' , component:CategorylistAdmnComponent},
+  { path: 'add-category' , component:AddCategoryComponent},
+  { path: 'profile' , component:ProfileComponent},
+  { path: 'changepass' , component:ChangePasswordComponent},
+
 ];
 
 @NgModule({
