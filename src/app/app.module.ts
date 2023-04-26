@@ -19,6 +19,9 @@ import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component
 import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component'; 
 import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlis
     NavbarEmpComponent,
     TicketlistEmpComponent,
     TicketThreadEmpComponent,
-    TicketlistHradminComponent
+    TicketlistHradminComponent,
+    AddCategoryComponent,
+    ProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
