@@ -19,7 +19,7 @@ import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component
 import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component'; 
 import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,8 @@ import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlis
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

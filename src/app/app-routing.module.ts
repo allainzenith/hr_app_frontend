@@ -11,7 +11,6 @@ import { HeaderEmpComponent } from './components/header-emp/header-emp.component
 import { HeaderHrempComponent } from './components/header-hremp/header-hremp.component';
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component';
 import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
-import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -26,7 +25,7 @@ const routes: Routes = [
   { path: 'hrreports', component: ReportsComponent },
   { path: 'ticket_thread' , component: TicketThreadEmpComponent},
   { path: 'ticketlist_hradmin' , component: TicketlistHradminComponent},
-  { path: 'ticketlist_employee' , component: TicketlistEmpComponent},
+  { path: 'ticketlist_employee' , component: TicketsEmployeeComponent},
 ];
 
 @NgModule({
