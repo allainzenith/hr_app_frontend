@@ -1,3 +1,5 @@
+<app-add-category *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-category>
+<app-edit-category *ngIf="modalService.showEditDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-edit-category>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,7 +80,8 @@
         </header>
         <main>
             <div class="dash-title">
-               <a href="#" type="button" class="newTicket">Add Category</a>
+               <button (click)="modalService.showDialog = true" class="newTicket" style="color:#fff">Add Category</button>
+                <!-- <a href="#" type="button" class="newTicket" (click)="modalService.showDialog = true">Add Category</a> -->
             </div>  
             <h2>TICKETS</h2>
             <div class="table__body ">
@@ -100,7 +103,7 @@
                             <td> This is the description blahbl..</td>
                             <td> Jane DOe</td>
                             <td>
-                                <span class="ti-pencil"></span>
+                                <button class="ti-pencil" (click)="modalService.showEditDialog = true"></button>
                                 <span class="ti-trash"></span>
                             </td>
                         </tr>

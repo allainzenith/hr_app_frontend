@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ModalserviceService } from 'src/app/service/modalservice.service';
 @Component({
-  selector: 'app-categorylist-admn',
-  templateUrl: './categorylist-admn.component.html',
-  styleUrls: ['./categorylist-admn.component.css']
+  selector: 'app-edit-category',
+  templateUrl: './edit-category.component.html',
+  styleUrls: ['./edit-category.component.css']
 })
-export class CategorylistAdmnComponent {
+export class EditCategoryComponent {
   constructor(public modalService: ModalserviceService){}
   ngOnInit(){
 

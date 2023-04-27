@@ -23,6 +23,10 @@ import { FormsModule } from '@angular/forms';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { GeneratereportsComponent } from './components/generatereports/generatereports.component';
+import { ReportlistsadminComponent } from './pages/reportlistsadmin/reportlistsadmin.component';
+import { CategorylistAdmnComponent } from './pages/categorylist-admn/categorylist-admn.component';
+import { EditCategoryComponent } from './components/edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     TicketlistHradminComponent,
     AddCategoryComponent,
     ProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    GeneratereportsComponent,
+    ReportlistsadminComponent,
+    CategorylistAdmnComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
