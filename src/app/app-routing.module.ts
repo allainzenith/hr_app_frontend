@@ -19,6 +19,9 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
+import { ProfileHrempComponent } from './pages/profile-hremp/profile-hremp.component';
+import { ProfileHradmComponent } from './pages/profile-hradm/profile-hradm.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -41,6 +44,9 @@ const routes: Routes = [
   { path: 'userlhre' , component:UserListHrempComponent},
   { path: 'userlhra' , component:UserListHradmComponent},
   { path: 'addU' , component:AddUsersComponent},
+  { path: 'profileHe' , component:ProfileHrempComponent},
+  { path: 'profileHa' , component:ProfileHradmComponent},
+  { path: 'editUser' , component:EditUsersComponent},
   
 ];
 
