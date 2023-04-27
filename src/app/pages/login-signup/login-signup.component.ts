@@ -56,6 +56,10 @@ export class LoginSignupComponent {
           this.router.navigate(['/dashboard']);
         }
 
+        else if((response.body as any).emp_role === 'employee'){
+          this.router.navigate(['/ticketlist_employee']);
+        }
+
       } else {
         console.log('undefined')
       }

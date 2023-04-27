@@ -19,6 +19,7 @@ import { NavbarEmpComponent } from './components/navbar-emp/navbar-emp.component
 import { TicketlistEmpComponent } from './pages/ticketlist-emp/ticketlist-emp.component';
 import { TicketThreadEmpComponent } from './pages/ticket-thread-emp/ticket-thread-emp.component'; 
 import { TicketlistHradminComponent } from './pages/ticketlist-hradmin/ticketlist-hradmin.component';
+import { FormsModule } from '@angular/forms';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
@@ -30,7 +31,6 @@ import { ProfileHradmComponent } from './pages/profile-hradm/profile-hradm.compo
 import { EditUsersComponent } from './components/edit-users/edit-users.component';
 import { TicketThreadAdmComponent } from './pages/ticket-thread-adm/ticket-thread-adm.component';
 import { TicketThreadHrempComponent } from './pages/ticket-thread-hremp/ticket-thread-hremp.component';
-
 
 @NgModule({
   declarations: [
@@ -67,7 +67,8 @@ import { TicketThreadHrempComponent } from './pages/ticket-thread-hremp/ticket-t
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

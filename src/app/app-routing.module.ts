@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'hrreports', component: ReportsComponent },
   { path: 'ticket_thread' , component: TicketThreadEmpComponent},
   { path: 'ticketlist_hradmin' , component: TicketlistHradminComponent},
-  { path: 'ticketlist_employee' , component: TicketlistEmpComponent},
+  { path: 'ticketlist_employee' , component: TicketsEmployeeComponent},
   { path: 'categories' , component:CategorylistAdmnComponent},
   { path: 'add-category' , component:AddCategoryComponent},
   { path: 'profile' , component:ProfileComponent},

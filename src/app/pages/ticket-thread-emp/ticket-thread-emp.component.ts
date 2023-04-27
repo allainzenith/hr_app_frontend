@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -16,6 +16,8 @@ export class TicketThreadEmpComponent implements OnInit {
   date_needed:  string = '';
   assigned_to: string = '';
   response: any;
+
+  thread_content = '';
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
   
   ngOnInit() {
@@ -57,6 +59,16 @@ export class TicketThreadEmpComponent implements OnInit {
     return token;
   }
 
+  async empID(){
+    const empID = localStorage.getItem('empID');
+    if (empID) {
+      console.log('empID: '+empID);
+    } else {
+      // Handle the case where the token value is not present in localStorage
+    }
+
+    return empID;
+  }
 
   async getThread(){
     const token = await this.token();
@@ -80,6 +92,48 @@ export class TicketThreadEmpComponent implements OnInit {
     }, error => {
       // Handle errors here
     });
+
+  }
+
+  async updateTicketThread(){
+    const formData = {
+      'ticketID': this.ticketID,
+      'thread_content': this.thread_content,
+      'created_at': '2023-03-03',
+      'sent_by': await this.empID(), 
+      'file_attachment':''
+    }
+
+    console.log(formData)
+
+    const token = await this.token();
+
+
+    try {
+      const options = {
+        headers: new HttpHeaders({
+          'Authorization': 'Bearer ' + token
+        })
+      };
+      
+      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/ticketthread/updateticketthread`, formData, options).toPromise();
+      
+      if (response instanceof HttpResponse) {
+        if (response.status === 200) {
+          console.log(response.status);
+        } else {
+          console.log(`Server returned status code ${response.status}`);
+        }
+      } else {
+        console.log(`Unexpected response type: ${typeof response}`);
+      }
+
+      this.getThread();
+    } catch (error) {
+      console.log(error);
+      // Handle the error
+    }
+    
 
   }
   
