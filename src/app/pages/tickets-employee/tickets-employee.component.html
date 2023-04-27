@@ -74,16 +74,17 @@
                             <tr *ngFor="let ticket of response[0]">
                               <td>{{ ticket?.ticketID }}</td>
                               <td>{{ ticket?.description }}</td>
-                              <td>{{ ticket?.category }}</td>
+                              <td><button (click)="view(ticket)">{{ ticket?.category }}</button></td>
                               <td>
                                 <span *ngIf="ticket?.priority === 'high'" style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
                                 <span *ngIf="ticket?.priority === 'mid'" style="font-size:12px; padding:3px 9px; background-color: #F7BE6D; border: 3px solid #FBB347; border-radius: 15px;">mid</span>
                                 <span *ngIf="ticket?.priority === 'low'" style="font-size:12px; padding:3px 9px; background-color: #B1DD9E; border: 3px solid #97CF8A; border-radius: 15px;">low</span>
-                            </td>
-                              <td>
-                                <span *ngIf="ticket?.status === '2'" style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
-                                <span *ngIf="ticket?.status === '1'" style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
-                            </td>
+                             </td>
+                              <!-- <td>
+                                {{ ticket?.status }} -->
+                                <!-- <span *ngIf="ticket?.status === '2'" style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                <span *ngIf="ticket?.status === '1'" style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span> -->
+                             <!-- </td> -->
 
                               <td>{{ ticket?.date_needed }}</td>
                               <td><img src="../assets/icons/eye.svg" alt="My Icon" style="width:25px" (click)="viewTicket(ticket)">
