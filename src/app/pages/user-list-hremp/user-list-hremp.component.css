@@ -195,102 +195,53 @@ a{
     color: white;
 
 }
-.thread-container{
-    margin: 2rem 1rem 1rem 10rem;
-    width: 70%;
-    height: 75vh;
-    border-radius: 10px;
-    border: 1px solid #fff;
-    background-color: #fff ;
 
-}
-hr{
-    margin-top: 1rem;
-    color: #777777;
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    border-radius: .6rem;
+    overflow: auto;
+    overflow: overlay;
 }
 
-table{
 
+table {
+    width: 100%;
+}
+
+table, th, td {
     border-collapse: collapse;
-    width: 90%;
-    margin-left:5%;
-    margin-right:5%;
-    color: #72777D;
+    padding: .5rem;
+    text-align: center;
 }
 
-td{
-    padding: 3px;
-    vertical-align:top;
-    font-size: 14px;
-}
-h3{
-    margin-left: 5%;
-    margin-bottom: 2%;
-}
-.status.pending {
-    background-color: #F05E16;
-    color: #fff;
+thead th {
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
 }
 
-.status.resolved {
-    background-color: rgb(6, 202, 49);
-    color: #fff;
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
 }
 
 .status {
-    padding: .1rem 0;
+    padding: .2rem 0;
     border-radius: 2rem;
     text-align: center;
-    width: 20%;
-}
-input[type="date"]{
-    color: red;
-    border: none;
-    outline: none;
-}
-::-webkit-calendar-picker-indicator{
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
 }
 
-.thread2{
-    overflow: hidden;
-    overflow-y: scroll;
-    margin: 1rem;
-    height: 30vh;
-}
-.thread2 p{
-    font-size: 14px;
+.status.resolved {
     color: #222222;
-    margin-bottom: 2rem;
-    
+    background-color: #4BD37B;
 }
 
-textarea{
-    resize: none;
-    width: 100%;
-    height: 70px;
-    border: none;
-    background-color: #F0F6F7;
+.status.pending {
+    background-color: #F05E16;
 }
-.sbold{
-    font-weight: bold;
+
+.status.shipped {
+    background-color: #6fcaea;
 }
-.sgray{
-    color: #72777D;
-}
-.italic{
-    font-style: italic;
-    font-weight: bold;
-}
-.thread2 .send{
-    margin-top: 10px;
-    margin-left: 92%;
-    width: 70px;
-    height: 30px;
-    border-radius: 6px;
-    color: white;
-    background-color: red;
-    border:none;
-}
+/*  */
