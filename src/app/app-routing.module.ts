@@ -16,8 +16,8 @@ import { CategorylistAdmnComponent } from './pages/categorylist-admn/categorylis
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
-import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
 import { ProfileHrempComponent } from './pages/profile-hremp/profile-hremp.component';
 import { ProfileHradmComponent } from './pages/profile-hradm/profile-hradm.component';
