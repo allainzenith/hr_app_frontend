@@ -122,4 +122,8 @@ export class TicketsEmployeeComponent implements OnInit {
     console.log(data)
     this.router.navigate(['/ticket_thread'], { queryParams: data })
   }
+
+  view(ticket:any){
+    console.log(ticket.status)
+  }
 }

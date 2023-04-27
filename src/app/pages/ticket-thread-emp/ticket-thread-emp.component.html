@@ -51,8 +51,8 @@
                     <div class="thread2">
                         <p>Jane Doe created this ticket. <span class="sgray">2 days ago</span></p>
                         <p *ngFor="let thread of response[0]"><span class="sbold">HR update: </span>{{ thread?.thread_content }} | <span class="sgray">{{ thread?.created_at }}</span></p>
-                        <textarea placeholder="Provide a feed back"></textarea><br>
-                        <button class="send"><a href="#">Send</a></button>     
+                        <textarea name="thread_content" [(ngModel)]="thread_content" placeholder="Provide a feed back"></textarea><br>
+                        <button class="send" (click) = "updateTicketThread()">Send</button>     
                     </div>
                 </div>
             </div>
