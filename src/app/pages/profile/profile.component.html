@@ -1,4 +1,5 @@
-<!-- <app-add-ticket *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-ticket> -->
+<app-change-password *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-change-password>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,20 +58,31 @@
                     </button>
                 </div> -->
                 <div class="prof-container">
-                    <p>Profile Settings</p>
-                    <div>
-                        <p>Jane Doe</p>
-                        <p>Employee, Engineer</p>
-                        <p>janedoe@gmail.com</p>
+                    <p class="title">Profile Settings</p>
+                    <div class="prof-head">
+                            <div class="head-img"></div>
+                            <div>
+                                <p class="name">Jane Doe</p>
+                                <p class="grey">Employee, Engineer</p>
+                                <p class="grey1">janedoe@gmail.com</p>
+                            </div>
                     </div>
-                    <div>
-                        <div>
-
+                    <div class="section">
+                        <div class="top-section">
+                            <p>Name</p>
+                            <input type="text" disabled value="Jane Doe">
+                            <p>Role</p>
+                            <input type="text" disabled value="Employee">
                         </div>
                         <div>
-
+                            <p>Email Address</p>
+                            <input type="text" disabled value="janedoe@gmail.com">
+                            
+                            <p>Deparment</p>
+                            <input type="text" disabled value="Engineering">
                         </div>
                     </div>
+                    <button type="submit" (click)="modalService.showDialog = true">Change Password</button>
                 </div> 
             </div>    
         </main>

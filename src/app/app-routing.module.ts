@@ -20,7 +20,10 @@ import { GeneratereportsComponent } from './components/generatereports/generater
 import { ReportsadminComponent } from './pages/reportsadmin/reportsadmin.component';
 import { ReportlistsadminComponent } from './pages/reportlistsadmin/reportlistsadmin.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
-
+import { AddUsersComponent } from './components/add-users/add-users.component';
+import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -43,6 +46,10 @@ const routes: Routes = [
   { path: 'generatereports' , component:GeneratereportsComponent},
   { path: 'reportlistsadmin' , component:ReportlistsadminComponent},
   { path: 'edit-category' , component:EditCategoryComponent},
+  { path: 'add-users' , component:AddUsersComponent},
+  { path: 'userlhre' , component:UserListHrempComponent},
+  { path: 'userlhra' , component:UserListHradmComponent},
+  { path: 'editUser' , component:EditUsersComponent},
 ];
 
 @NgModule({

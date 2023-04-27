@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ModalserviceService } from 'src/app/service/modalservice.service';
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-add-users',
+  templateUrl: './add-users.component.html',
+  styleUrls: ['./add-users.component.css']
 })
-export class ProfileComponent {
+export class AddUsersComponent {
   constructor(public modalService: ModalserviceService){}
   ngOnInit(){
 

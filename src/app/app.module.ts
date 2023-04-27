@@ -27,6 +27,10 @@ import { GeneratereportsComponent } from './components/generatereports/generater
 import { ReportlistsadminComponent } from './pages/reportlistsadmin/reportlistsadmin.component';
 import { CategorylistAdmnComponent } from './pages/categorylist-admn/categorylist-admn.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
+import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
     GeneratereportsComponent,
     ReportlistsadminComponent,
     CategorylistAdmnComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    AddUsersComponent,
+    UserListHrempComponent,
+    UserListHradmComponent,
+    EditUsersComponent
   ],
   imports: [
     BrowserModule,
