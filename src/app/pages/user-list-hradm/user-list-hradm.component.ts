@@ -1,13 +1,17 @@
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ModalserviceService } from 'src/app/service/modalservice.service';
+
+
 @Component({
   selector: 'app-user-list-hradm',
   templateUrl: './user-list-hradm.component.html',
   styleUrls: ['./user-list-hradm.component.css']
 })
 export class UserListHradmComponent {
+
   response:any;
 
 

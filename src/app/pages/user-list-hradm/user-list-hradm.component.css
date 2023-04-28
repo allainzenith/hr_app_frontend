@@ -1,4 +1,5 @@
 
+
 *{
     text-decoration: none;
     list-style-type: none;
@@ -190,6 +191,13 @@ main{
 }
 
 
+a{
+    text-decoration: none;
+    color: white;
+
+}
+
+
 .table__body {
     width: 95%;
     max-height: calc(89% - 1.6rem);
@@ -237,4 +245,6 @@ tbody tr:nth-child(even) {
 
 .status.shipped {
     background-color: #6fcaea;
+
 }
+

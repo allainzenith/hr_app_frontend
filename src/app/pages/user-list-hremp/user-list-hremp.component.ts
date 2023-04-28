@@ -1,12 +1,16 @@
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-user-list-hremp',
   templateUrl: './user-list-hremp.component.html',
   styleUrls: ['./user-list-hremp.component.css']
 })
 export class UserListHrempComponent {
+
   response:any;
 
 
@@ -74,5 +78,6 @@ export class UserListHrempComponent {
     });
 
   }
+
 
 }

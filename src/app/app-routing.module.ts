@@ -23,7 +23,11 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
 import { AddUsersComponent } from './components/add-users/add-users.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
 import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { ProfileHrempComponent } from './pages/profile-hremp/profile-hremp.component';
+import { ProfileHradmComponent } from './pages/profile-hradm/profile-hradm.component';
 import { EditUsersComponent } from './components/edit-users/edit-users.component';
+import { TicketThreadAdmComponent } from './pages/ticket-thread-adm/ticket-thread-adm.component';
+import { TicketThreadHrempComponent } from './pages/ticket-thread-hremp/ticket-thread-hremp.component';
 
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
@@ -41,7 +45,7 @@ const routes: Routes = [
   { path: 'ticketlist_employee' , component: TicketsEmployeeComponent},
   { path: 'categories' , component:CategorylistAdmnComponent},
   { path: 'add-category' , component:AddCategoryComponent},
-  { path: 'profile' , component:ProfileComponent},
+  { path: 'profile_emp' , component:ProfileComponent},
   { path: 'changepass' , component:ChangePasswordComponent},
   { path: 'generatereports' , component:GeneratereportsComponent},
   { path: 'reportlistsadmin' , component:ReportlistsadminComponent},
@@ -50,6 +54,15 @@ const routes: Routes = [
   { path: 'userlhre' , component:UserListHrempComponent},
   { path: 'userlhra' , component:UserListHradmComponent},
   { path: 'editUser' , component:EditUsersComponent},
+  { path: 'userlhre' , component:UserListHrempComponent},
+  { path: 'userlhra' , component:UserListHradmComponent},
+  { path: 'addU' , component:AddUsersComponent},
+  { path: 'profile_hr' , component:ProfileHrempComponent},
+  { path: 'profile_admin' , component:ProfileHradmComponent},
+  { path: 'editUser' , component:EditUsersComponent},
+  { path: 'ticket_threadAdm', component:TicketThreadAdmComponent},
+  { path: 'ticket_threadHrE' , component:TicketThreadHrempComponent},
+
 ];
 
 @NgModule({

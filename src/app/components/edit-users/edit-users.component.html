@@ -21,9 +21,29 @@
                         <option value="">Coder</option>
                     </select>
                 </div>
+
                 <div class="input-fields">
                     <p>Department</p>
                     <input type="text" >        
+                </div>
+                <p>Department</p><br>
+                <div class="checkbox">
+  
+                    <label class="container">Payroll
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                      </label>
+                      
+                      <label class="container">Training
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      
+                      <label class="container">PES
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+
                 </div>
 
             </div>   
@@ -31,7 +51,9 @@
         </form>
 
         <div id="actions">
+
             <button class="cancel" (click)="modalService.showEditDialog = false">Cancel</button>
+
             <button class="submit">Edit User</button>
         </div>
     </div>
