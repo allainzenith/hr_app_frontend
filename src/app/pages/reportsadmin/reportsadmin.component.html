@@ -1,1 +1,136 @@
-<p>reportsadmin works!</p>
+<app-generatereports *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-generatereports>>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <title>Tickets</title>
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span>Jane Dae</span>
+            </h3>
+            <p>HR Admin</p>
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a>
+                        <span class="ti-home"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="ti-ticket"></span>
+                        <span>Ticket List</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="ti-receipt "></span>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="ti-id-badge"></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="ti-comments"></span>
+                        <span>Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="ti-user"></span>
+                        <span>Profile</span>
+                    </a>
+                </li>   
+                <li>
+                    <a>
+                        <span class="ti-arrow-circle-right"></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>   
+    
+    <div class="main-content">
+        <header>
+            <div>
+                <span><img src="assets/img/logo.png" class="logo"></span>
+            </div>
+        </header>
+        <main>
+            <div class="dash-footer">
+                <div class="btn-container">   
+                    <p>Reports</p>                
+                    <button type="submit" (click)="modalService.showDialog = true">
+                        Export
+                    </button>                                      
+                </div>
+                <div class="btr">
+                    <p>Ticket Count Per HR Personnel</p>  
+                    <div class="dropdown">
+                        <select name="All" id="" value="All">
+                            <option value="All">All</option>
+                            <option value="Aging">Aging</option>
+                            <option value="Due Date">Due Date</option>
+                            <option value="Status">Status</option>
+                            <option value="Category">Category</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="date">
+                    <input type="date">
+                    -
+                    <input type="date">
+                </div>
+
+                <div class="category">               
+                    <div class="data">
+                        <div class="bastauy">
+                            <label for="">Total No. of Tickets</label>
+                            <span>80</span>
+                        </div>
+                        <div class="bastauy">
+                            <label for="">Personnel 1</label>
+                            <span>20</span>
+                        </div>
+                        <div class="bastauy">
+                            <label for="">Personnel 2</label>
+                            <span>20</span>
+                        </div>
+                        <div class="bastauy">
+                            <label for="">Personnel 3</label>
+                            <span>20</span>
+                        </div>
+                        <div class="bastauy">
+                            <label for="">Personnel 4</label>
+                            <span>20</span>
+                        </div>
+                        <div class="bastauy">
+                            <label for="">Personnel 5</label>
+                            <span>20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </main>
+    </div>
+
+</body>
+
+</html>
+

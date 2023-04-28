@@ -1,3 +1,7 @@
+
+<app-add-users *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-users>>
+<app-edit-users *ngIf="modalService.showEditDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-edit-users>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,12 +82,14 @@
         </header>
         <main>
             <div class="dash-title">
-               <a href="#" type="button" class="newTicket">Add User</a>
+
+               <button (click)="modalService.showDialog = true" class="newTicket" style="color:#fff">Add User</button>
+
             </div>  
             <h2>Users</h2>
             <div class="table__body ">
 
-                <table>
+                <table *ngIf="response && response[0]">
                     <thead>
                         <tr>
                             <th> Id</th>
@@ -95,16 +101,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
+                        <tr *ngFor="let data of response[0]">
+                            <td> {{ data?.empID }} </td>
+                            <td> {{ data?.name }}</td>
+                            <td> {{ data?.emp_role }}</td>
+                            <td> {{ data?.email }}</td>
+                            <td> {{ data?.department }}</td>
+
                             <td>
                                 <span class="ti-pencil"></span>
                                 <span class="ti-trash"></span>
-                            </td>
+                            </td>                     
                         </tr>
                         <tr>
                             <td> 1 </td>
@@ -150,62 +157,6 @@
                                 <span class="ti-trash"></span>
                             </td>
                         </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                     <tfoot>
                         <tr>
@@ -219,3 +170,4 @@
 </body>
 
 </html>
+

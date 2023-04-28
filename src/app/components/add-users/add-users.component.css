@@ -49,6 +49,7 @@
     padding: 18px 0;
 }
 
+
 .input-fields:nth-child(2n){
     justify-content: end;
 }
@@ -69,6 +70,14 @@
     background-color: #ccc;
     color:#333;
 }
+
+.textarea-input{
+    justify-content: center;
+}
+.bastahaha{
+    padding: 20px;
+}
+
 
 .textarea-input{
 
@@ -148,9 +157,11 @@ input{
     height: 40px;
     background-color: #F0F6F7;
     border: none;
+
 }
 .checkbox{
     display: flex;
+
 }
 select{
     padding: 5px;
@@ -165,7 +176,9 @@ select{
     width: 80%;
     margin-bottom: 1rem;
     color: #72777D;
+
 }
+
 
 .container {
     display: block;
@@ -230,3 +243,4 @@ select{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
