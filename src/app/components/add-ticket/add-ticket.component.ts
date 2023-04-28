@@ -63,7 +63,7 @@ export class AddTicketComponent {
       })
     };
     
-    this.http.get(`http://192.168.77.104:8080/spring-hibernate-jpa/requestcategory/join`, options).subscribe(response => {
+    this.http.get(`http://localhost:8080/spring-hibernate-jpa/requestcategory/join`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
