@@ -114,10 +114,14 @@ export class TicketThreadEmpComponent implements OnInit {
   }
 
   async updateTicketThread(){
+    const now = new Date();
+    const mysqlDatetime = now.toISOString().slice(0, 19).replace('T', ' ');
+    console.log(mysqlDatetime); // output: e.g. 2023-04-29 16:47:23
+
     const formData = {
       'ticketID': this.ticketID,
       'thread_content': this.thread_content,
-      'created_at': '2023-03-03',
+      'created_at': mysqlDatetime,
       'sent_by': await this.empID(), 
       'file_attachment':''
     }
