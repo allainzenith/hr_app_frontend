@@ -68,7 +68,7 @@ export class TicketsEmployeeComponent implements OnInit {
       })
     };
     
-    this.http.get(`http://192.168.77.104:8080/spring-hibernate-jpa/ticket/findAllTickets/${usertype}/${empID}`, options).subscribe(response => {
+    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/findAllTickets/${usertype}/${empID}`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
@@ -96,7 +96,7 @@ export class TicketsEmployeeComponent implements OnInit {
       })
     };
     
-    this.http.get(`http://192.168.77.104:8080/spring-hibernate-jpa/ticket/findAgingTickets/${usertype}/${empID}`, options).subscribe(response => {
+    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/findAgingTickets/${usertype}/${empID}`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
