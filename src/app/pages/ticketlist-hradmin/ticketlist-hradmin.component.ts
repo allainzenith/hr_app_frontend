@@ -55,7 +55,7 @@ export class TicketlistHradminComponent implements OnInit{
 
 
   async getAllTickets(){
-    const token = this.token();
+    const token = await this.token();
 
     const options = {
       headers: new HttpHeaders({
@@ -77,7 +77,7 @@ export class TicketlistHradminComponent implements OnInit{
   }
 
   async getAgingTickets(){
-    const token = this.token();
+    const token = await this.token();
 
     const options = {
       headers: new HttpHeaders({

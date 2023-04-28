@@ -2,7 +2,7 @@
 <div class="sidebar">
     <div class="sidebar-header">
         <h3 class="brand">
-            <span>John Doe</span>
+            <span>{{name}}</span>
         </h3>
         <p>HR admin</p>
         <label for="sidebar-toggle" class="ti-menu-alt"></label>
@@ -33,19 +33,19 @@
                     <span>Users</span>
                 </a>
             </li>
-            <li>
+            <li routerLink="/categories">
                 <a>
                     <span class="ti-comments"></span>
-                    <span>Request</span>
+                    <span>Categories</span>
                 </a>
             </li>
-            <li>
+            <li routerLink="/profile_admin">
                 <a>
                     <span class="ti-user"></span>
                     <span>Profile</span>
                 </a>
             </li>   
-            <li>
+            <li (click)="logout()">
                 <a>
                     <span class="ti-arrow-circle-right"></span>
                     <span>Logout</span>

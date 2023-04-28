@@ -179,8 +179,28 @@ export class TicketThreadEmpComponent implements OnInit {
     }
   }
 
-  markResolved(){
+  async markResolved(){
+    const token = await this.token();
 
+
+    const options = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+
+    try {
+      const response = await this.http.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/2`, { options, observe: 'response' }).toPromise();
+      if (response !== undefined) {
+        console.log(response)
+        this.isDisabled = true
+      } else {
+        console.log('undefined')
+      }
+    } catch (error) {
+      console.log(error);
+      // Handle the error
+    }
   }
   
 }

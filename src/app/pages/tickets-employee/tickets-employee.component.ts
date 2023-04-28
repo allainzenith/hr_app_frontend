@@ -54,7 +54,7 @@ export class TicketsEmployeeComponent implements OnInit {
 
 
   async getAllTickets(){
-    const token = this.token();
+    const token = await this.token();
     const empID = await this.empID();
     const emp_role = await this.emp_role();
 

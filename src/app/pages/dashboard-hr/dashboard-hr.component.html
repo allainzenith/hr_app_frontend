@@ -14,7 +14,7 @@
     <div class="main-content">
         <main>
             <div class="dash-title">
-                <h2>Welcome Back, Jane Dae.</h2>
+                <h2>Welcome Back, {{name}}</h2>
                 <p>Here's what's going on while you were gone</p>
             </div>  
             <div class="body-container">
@@ -93,6 +93,7 @@
                               <td>
                                 <span *ngIf="ticket?.status === 2" style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
                                 <span *ngIf="ticket?.status === 1" style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                                <span *ngIf="ticket?.status === 3" style="font-size:10px; padding:4.8px 6px; background-color: red; border-radius: 10px;">Cancelled</span>
                             </td>
 
                               <td>{{ ticket?.date_needed }}</td>
