@@ -10,14 +10,17 @@
 </head>
 
 <body>
-    <app-header></app-header>
+    <app-header-emp *ngIf="(header | async) === 'employee'"></app-header-emp>
+    <app-header *ngIf="(header | async) === 'admin'"></app-header>
+    <app-header-hremp *ngIf="(header | async) === 'hr'"></app-header-hremp>
     <div class="main-content">
         <main>
             <div class="thread-container">
                 <div class="thread1">
                     <hr>
                     <div class="dash-title">
-                        <button class="newTicket"><a href="#">Cancel Ticket</a></button>
+                        <button *ngIf="(header | async) === 'employee'" class="newTicket" (click) ="cancelTicket()" [disabled]="isDisabled">Cancel Ticket</button>
+                        <button *ngIf="(header | async) === 'hr'" class="resolveTicket" (click)="markResolved()" [disabled]="isDisabled">Mark as Resolved</button>
                     </div>
                     <h3>{{ subject }}</h3>
                     <table>
@@ -38,6 +41,7 @@
                             <td>
                                 <p *ngIf="status === '1'" class="status pending">Ongoing</p>
                                 <p *ngIf="status === '2'" class="status resolved">Resolved</p>
+                                <p *ngIf="status === '3'" class="status cancelled">Cancelled</p>
                             </td>
                         </tr>
                         <tr>
@@ -50,9 +54,9 @@
                 <div *ngIf="response && response[0]">
                     <div class="thread2">
                         <p>Jane Doe created this ticket. <span class="sgray">2 days ago</span></p>
-                        <p *ngFor="let thread of response[0]"><span class="sbold">HR update: </span>{{ thread?.thread_content }} | <span class="sgray">{{ thread?.created_at }}</span></p>
-                        <textarea name="thread_content" [(ngModel)]="thread_content" placeholder="Provide a feed back"></textarea><br>
-                        <button class="send" (click) = "updateTicketThread()">Send</button>     
+                        <p *ngFor="let thread of response[0]"><span class="sbold">Update: </span>{{ thread?.thread_content }} | <span class="sgray">{{ thread?.created_at }}</span></p>
+                        <textarea name="thread_content" [(ngModel)]="thread_content" [disabled]="isDisabled" placeholder="Provide a feed back"></textarea><br>
+                        <button class="send" (click) = "updateTicketThread()" [disabled]="isDisabled">Send</button>     
                     </div>
                 </div>
             </div>

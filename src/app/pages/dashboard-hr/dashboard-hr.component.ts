@@ -132,4 +132,19 @@ export class DashboardHrComponent implements OnInit {
     });
     
   }
+
+  viewTicket(ticket:any){
+    console.log('okay')
+    const data = {
+      ticketID: ticket.ticketID,
+      category: ticket.category,
+      description: ticket.description,
+      subject: ticket.subject,
+      status: ticket.status,
+      date_needed: ticket.date_needed,
+      assigned_to: ticket.assigned_to,
+    }
+    console.log(data)
+    this.router.navigate(['/ticket_thread'], { queryParams: data })
+  }
 }
