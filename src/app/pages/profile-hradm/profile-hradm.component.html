@@ -9,70 +9,9 @@
     <title>Tickets</title>
 </head>
 
-<body>
-    <input type="checkbox" id="sidebar-toggle">
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h3 class="brand">
-                <span>Jane Dae</span>
-            </h3>
-            <p>Hr Admin</p>
-            <label for="sidebar-toggle" class="ti-menu-alt"></label>
-        </div>
-        <div class="sidebar-menu">
-            <ul>
-                <li routerLink="/dashboard">
-                    <a>
-                        <span class="ti-home"></span>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li routerLink="/ticketlist_hradmin">
-                    <a>
-                        <span class="ti-ticket"></span>
-                        <span>Ticket List</span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <span class="ti-receipt "></span>
-                        <span>Reports</span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <span class="ti-id-badge"></span>
-                        <span>Users</span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <span class="ti-comments"></span>
-                        <span>Request</span>
-                    </a>
-                </li>
-                <li>
-                    <a>
-                        <span class="ti-user"></span>
-                        <span>Profile</span>
-                    </a>
-                </li>   
-                <li>
-                    <a>
-                        <span class="ti-arrow-circle-right"></span>
-                        <span>Logout</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>   
-    
+<body>   
     <div class="main-content">
-        <header>
-            <div>
-                <span><img src="assets/img/logo.png" class="logo"></span>
-            </div>
-        </header>
+        <app-header></app-header> 
         <main>
             <div class="profile-content">
                 <!-- <div class="btn-container">                   

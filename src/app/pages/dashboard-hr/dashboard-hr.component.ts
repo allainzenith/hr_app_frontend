@@ -11,12 +11,11 @@ import { Router } from '@angular/router';
 
 export class DashboardHrComponent implements OnInit {
   response:any;
-
+  name:any;
 
   constructor(private http: HttpClient, private router: Router){}
   async ngOnInit() {
     this.getAllTickets();
-    this.getEmployeesData();
   }
   
   async token(){
@@ -53,13 +52,27 @@ export class DashboardHrComponent implements OnInit {
     return emp_role;
   }
 
+  async emp_name(){
+    const emp_name = localStorage.getItem('name');
+    if (emp_name) {
+      console.log('name: '+emp_name);
+    } else {
+      // Handle the case where the token value is not present in localStorage
+    }
+
+    return emp_name;
+  }
+
+
 
   async getAllTickets(){
-    const token = this.token();
+    const token = await this.token();
     const empID = await this.empID();
     const emp_role = await this.emp_role();
+    const emp_name = await this.emp_name();
 
     const usertype = emp_role == 'hr' ? 'assigned_to' : 'empID';
+    this.name = emp_name;
 
     console.log('this is the empID'+empID)
     console.log('this is the usertype'+usertype)
@@ -83,7 +96,7 @@ export class DashboardHrComponent implements OnInit {
   }
 
   async getAgingTickets(){
-    const token = this.token();
+    const token = await this.token();
     const empID = await this.empID();
     const emp_role = await this.emp_role();
 
@@ -91,11 +104,15 @@ export class DashboardHrComponent implements OnInit {
 
     console.log('this is the empID'+empID)
     console.log('this is the usertype'+usertype)
+
     const options = {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + token
       })
     };
+
+    console.log(options);
+    console.log('this is the token'+token);
     
     this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/findAgingTickets/${usertype}/${empID}`, options).subscribe(response => {
       // Handle the response here
@@ -121,17 +138,22 @@ export class DashboardHrComponent implements OnInit {
   }
 
 
-  getEmployeesData(){
 
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer` + localStorage.getItem('token')
-    });
 
-    this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/tickets`, { headers}).subscribe(res => {
-      console.log(res)
-    });
+  // getEmployeesData(){
+
+
+  //   const token = this.token();
+
+  //   const headers = new HttpHeaders({
+  //     'Authorization': 'Bearer ' + token
+  //   });
+
+  //   this.http.get(`http://localhost:8080/spring-hibernate-jpa/ticket/tickets`, { headers}).subscribe(res => {
+  //     console.log(res)
+  //   });
     
-  }
+  // }
 
   viewTicket(ticket:any){
     console.log('okay')

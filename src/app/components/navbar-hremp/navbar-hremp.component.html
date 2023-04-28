@@ -2,7 +2,7 @@
 <div class="sidebar">
     <div class="sidebar-header">
         <h3 class="brand">
-            <span>Jane Dae</span>
+            <span>{{name}}</span>
         </h3>
         <p>HR Employee</p>
         <label for="sidebar-toggle" class="ti-menu-alt"></label>
@@ -27,13 +27,13 @@
                     <span>Users</span>
                 </a>
             </li>
-            <li>
+            <li routerLink="/profile_hr">
                 <a>
                     <span class="ti-user"></span>
                     <span>Profile</span>
                 </a>
             </li>   
-            <li>
+            <li (click)="logout()">
                 <a>
                     <span class="ti-arrow-circle-right"></span>
                     <span>Logout</span>
