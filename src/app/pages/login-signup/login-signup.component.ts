@@ -38,7 +38,7 @@ export class LoginSignupComponent {
     });
   
     try {
-      const response = await this.http.post(`http://192.168.77.104:8080/spring-hibernate-jpa/oauth/token`, body, { headers, observe: 'response' }).toPromise();
+      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/oauth/token`, body, { headers, observe: 'response' }).toPromise();
       if (response !== undefined) {
         console.log((response.body as any))
 
