@@ -78,4 +78,18 @@ export class UserListHradmComponent {
 
   }
   
+
+  deleteEmployee(empID:any){
+    if(confirm(`Are you sure u want to delete this employee no. ${empID}?`) ) {
+      const token = this.token();
+      const options = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    
+      this.http.delete(`http://192.168.77.104:8080/spring-hibernate-jpa/employee/delete/${empID}`, options).subscribe();
+      this.router.navigate(['/userlhra'])
+    } 
+  }
 }

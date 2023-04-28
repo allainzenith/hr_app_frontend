@@ -109,8 +109,8 @@
                             <td> {{ data?.department }}</td>
 
                             <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
+                                <button (click)="modalService.showEditDialog = true" class="ti-pencil" style="border:none; font-size: 15px;"></button>
+                                <button (click)="deleteEmployee(data?.empID)" class="ti-trash" style="font-size: 15px;"></button>
                             </td>                     
                         </tr>
                         <tr>
