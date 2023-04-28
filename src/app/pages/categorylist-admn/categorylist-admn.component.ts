@@ -14,6 +14,7 @@ import { ModalserviceService } from 'src/app/service/modalservice.service';
 export class CategorylistAdmnComponent implements OnInit {
   response:any;
   tooltipText = 'hello'
+  
   constructor(private http: HttpClient, public modalService: ModalserviceService){}
   ngOnInit(){
     this.getCategories();

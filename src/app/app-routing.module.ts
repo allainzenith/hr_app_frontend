@@ -23,10 +23,6 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
 import { AddUsersComponent } from './components/add-users/add-users.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
 import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
-import { EditUsersComponent } from './components/edit-users/edit-users.component';
-import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
-import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
-import { AddUsersComponent } from './components/add-users/add-users.component';
 import { ProfileHrempComponent } from './pages/profile-hremp/profile-hremp.component';
 import { ProfileHradmComponent } from './pages/profile-hradm/profile-hradm.component';
 import { EditUsersComponent } from './components/edit-users/edit-users.component';
