@@ -65,7 +65,7 @@ export class UserListHradmComponent {
       })
     };
     
-    this.http.get(`http://localhost:8080/spring-hibernate-jpa/employee/getall`, options).subscribe(response => {
+    this.http.get(`http://192.168.77.104:8080/spring-hibernate-jpa/employee/getall`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
@@ -78,4 +78,18 @@ export class UserListHradmComponent {
 
   }
   
+
+  deleteEmployee(empID:any){
+    if(confirm(`Are you sure u want to delete this employee no. ${empID}?`) ) {
+      const token = this.token();
+      const options = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    
+      this.http.delete(`http://192.168.77.104:8080/spring-hibernate-jpa/employee/delete/${empID}`, options).subscribe();
+      this.router.navigate(['/userlhra'])
+    } 
+  }
 }

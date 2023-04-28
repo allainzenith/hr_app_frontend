@@ -63,7 +63,7 @@ export class AddTicketComponent {
       })
     };
     
-    this.http.get(`http://localhost:8080/spring-hibernate-jpa/requestcategory/join`, options).subscribe(response => {
+    this.http.get(`http://192.168.77.104:8080/spring-hibernate-jpa/requestcategory/join`, options).subscribe(response => {
       // Handle the response here
       console.log(response)
       this.response = Object.values(response);
@@ -133,7 +133,7 @@ export class AddTicketComponent {
     
 
     try {
-      const response: HttpResponse<Object> | undefined = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/ticket/createticket`, formData, { observe: 'response' }).toPromise();
+      const response: HttpResponse<Object> | undefined = await this.http.post(`http://192.168.77.104:8080/spring-hibernate-jpa/ticket/createticket`, formData, { observe: 'response' }).toPromise();
       if(response && response.status === 200){
         console.log(response.status)
         this.modalService.showDialog = false

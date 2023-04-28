@@ -1,38 +1,43 @@
 <div id="container">
     <div id="header">Add User</div>
     <div id="content">
-        <form action="">
+        <form (ngSubmit) = "onSubmit()">
             <div class="main">
                 <div class="input-fields">
+                    <p>ID</p>
+                    <input type="text" name="empID" [(ngModel)]="empID">        
+                </div>
+                <div class="input-fields">
                     <p>Name</p>
-                    <input type="text">        
+                    <input type="text" name="name" [(ngModel)]="name">        
                 </div>
                 <div class="input-fields">
                     <p>Email</p>
-                    <input type="text">        
+                    <input type="text" name="email" [(ngModel)]="email">        
                 </div>
                 <div class="default">
                     <p>Employee Role</p>
-                    <select>
-                        <option value="">Hr Employee</option>
-                        <option value="">Hr Admin</option>
-                        <option value="">Employee</option>
-                        <option value="">Coder</option>
+                    <select name="emp_role" (change)="onSelectionChange($event)">
+                        <option value="Hr Employee">Hr Employee</option>
+                        <option value="Hr Admin">Hr Admin</option>
+                        <option value="Employee">Employee</option>
+                        <option value="Coder">Coder</option>
                     </select>
                 </div>
                 <div class="input-fields">
                     <p>Department</p>
-                    <input type="text" >        
+                    <input type="text" name="department" [(ngModel)]="department">        
                 </div>
 
             </div>   
+            <div id="actions">
+                <button class="cancel" (click)="modalService.showDialog = false">Cancel</button>
+                <button class="submit">Add User</button>
+            </div>
                  
         </form>
 
-        <div id="actions">
-            <button class="cancel" (click)="modalService.showDialog = false">Cancel</button>
-            <button class="submit">Add User</button>
-        </div>
+        
     </div>
     
 </div>
