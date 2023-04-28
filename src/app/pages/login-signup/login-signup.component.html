@@ -15,8 +15,8 @@
                 <img src="assets/img/logo.png" class="img-forgot">
                 <h3>Forgot your password? Don't Worry!</h3>
                 <h4>Send us your email so we can help you.</h4>
-                <input type="email" placeholder="Email" />
-                <button>Send Email</button>
+                <input type="email" placeholder="Email" #forgotemail/>
+                <button (click)="forgotPassword(forgotemail)">Send Email</button>
             </form>
         </div>
         <div class="form-container sign-in-container">

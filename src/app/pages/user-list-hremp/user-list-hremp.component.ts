@@ -58,7 +58,7 @@ export class UserListHrempComponent {
 
 
   async getAllEmployee(){
-    const token = this.token();
+    const token = await this.token();
 
     const options = {
       headers: new HttpHeaders({
