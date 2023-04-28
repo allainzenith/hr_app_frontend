@@ -131,9 +131,10 @@
                             <td> JaneDOe@gmail.com</td>
                             <td> Human Resources</td>
                             <td>
-                                <span class="ti-pencil"></span>
+                                <button (click)="modalService.showEditDialog = true" class="ti-pencil" style="border:none; font-size: 15px;"></button>
                                 <span class="ti-trash"></span>
                             </td>
+
                         </tr>
                         <tr>
                             <td> 1 </td>
@@ -157,6 +158,7 @@
                                 <span class="ti-trash"></span>
                             </td>
                         </tr>
+
                     </tbody>
                     <tfoot>
                         <tr>
