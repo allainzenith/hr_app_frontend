@@ -1,4 +1,5 @@
-<!-- <app-add-ticket *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-ticket> -->
+<app-change-password *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-change-password>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,8 @@
                             <input type="text" disabled value="Engineering">
                         </div>
                     </div>
-                    <button type="submit">Change Password</button>
+                    <button type="submit" (click)="modalService.showDialog = true">Change Password</button>
+
                 </div> 
             </div>    
         </main>

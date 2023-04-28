@@ -1,0 +1,59 @@
+<div id="container">
+    <div id="header">Generate Reports</div>
+    <div id="content">
+        <form action="">
+            <div class="main">
+                <div class="data">
+                    <div class="bastauy">
+                        <input class="radio" type="radio"  name="age" value="aging">
+                        <span style="width: 50%; margin: 0;">
+                            <select class="select" for="age1" name="" id="" >
+                                <option value="">Engagement (RNR)</option>
+                                <option value="">Category 2</option>
+                                <option value="">Category 3</option>
+                                <option value="">Category 4</option>
+                            </select>
+                        </span>
+
+                        <input class="radio" type="radio"  name="age" value="aging">
+                        <span style="padding-top: 9px; margin-left: 1rem;">
+                            <label for="">Generate All Tickets</label>
+                        </span>
+                    </div>
+                    <div class="bastauy">
+                        <input class="checkbox" type="checkbox"  name="age" value="aging">
+                        <span style="width:49%;">
+                            <label for="" class="label">Ticket Count Per Category</label>
+                        </span>
+                        <input class="checkbox" type="checkbox"  name="age" value="aging">
+                        <span style="margin-left: 1rem;">
+                            <label>Ticket Count Per HR Personnel</label>
+                        </span>
+                    </div>
+
+                    <div class="bastauy" style="margin-top:2rem; margin-bottom: 0.5rem; border-top: 1px solid #333;">
+                        <label for="">From</label>
+                        <span>To</span>
+                    </div>
+
+
+                </div>
+
+            
+
+            </div>
+            <div class="date" style="margin-bottom: 2rem;">
+                <input type="date">
+                -
+                <input type="date">
+            </div>
+               
+        </form>  
+        <div id="actions">
+            <button class="cancel" (click)="modalService.showDialog = false">Cancel</button>
+            <button class="submit">Generate</button>
+        </div>  
+</div>
+
+
+

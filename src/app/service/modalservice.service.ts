@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class ModalserviceService {
   showDialog = false;
+  showEditDialog = false;
   constructor() { }
 }

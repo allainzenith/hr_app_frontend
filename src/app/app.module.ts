@@ -25,6 +25,14 @@ import { FormsModule } from '@angular/forms';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { GeneratereportsComponent } from './components/generatereports/generatereports.component';
+import { ReportlistsadminComponent } from './pages/reportlistsadmin/reportlistsadmin.component';
+import { CategorylistAdmnComponent } from './pages/categorylist-admn/categorylist-admn.component';
+import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
+import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
 import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
@@ -53,6 +61,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AddCategoryComponent,
     ProfileComponent,
     ChangePasswordComponent,
+    GeneratereportsComponent,
+    ReportlistsadminComponent,
+    CategorylistAdmnComponent,
+    EditCategoryComponent,
+    AddUsersComponent,
+    UserListHrempComponent,
+    UserListHradmComponent,
+    EditUsersComponent,
     UserListHrempComponent,
     UserListHradmComponent,
     AddUsersComponent,

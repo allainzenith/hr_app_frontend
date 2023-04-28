@@ -190,11 +190,13 @@ main{
 
 }
 
+
 a{
     text-decoration: none;
     color: white;
 
 }
+
 
 .table__body {
     width: 95%;
@@ -243,5 +245,6 @@ tbody tr:nth-child(even) {
 
 .status.shipped {
     background-color: #6fcaea;
+
 }
-/*  */
+

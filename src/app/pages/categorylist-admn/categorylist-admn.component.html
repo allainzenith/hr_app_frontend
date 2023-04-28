@@ -1,3 +1,5 @@
+<app-add-category *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-category>
+<app-edit-category *ngIf="modalService.showEditDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-edit-category>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +12,14 @@
 </head>
 
 <body>
+
     <app-header></app-header>
+
     <div class="main-content">
         <main>
             <div class="dash-title">
-               <a href="#" type="button" class="newTicket">Add Category</a>
+               <button (click)="modalService.showDialog = true" class="newTicket" style="color:#fff">Add Category</button>
+                <!-- <a href="#" type="button" class="newTicket" (click)="modalService.showDialog = true">Add Category</a> -->
             </div>  
             <h2>Categories</h2>
             <div class="table__body ">
@@ -30,11 +35,13 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <tr *ngFor="let category of response[0]">
                             <td mat-cell [matTooltip]="tooltipText"> {{ category?.categoryID }} </td>
                             <td> {{ category?.categoryname }}</td>
                             <td> {{ category?.description }}</td>
                             <td> {{ category?.name }}</td>
+
                             <td>
                                 <span (click)="editCategory(category.categoryID)" class="ti-pencil"></span>
                                 <span (click)="deleteCategory(category.categoryID)" class="ti-trash"></span>

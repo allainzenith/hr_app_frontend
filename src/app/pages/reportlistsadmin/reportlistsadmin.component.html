@@ -1,0 +1,266 @@
+<app-generatereports *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-generatereports>>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <title>Tickets</title>
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span>Jane Dae</span>
+            </h3>
+            <p>HR Employee</p>
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="/employee/tickets">
+                        <span class="ti-home"></span>
+                        <span>Tickets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-user"></span>
+                        <span>Reports</span>
+                    </a>
+                </li>  
+                <li>
+                    <a href="">
+                        <span class="ti-user"></span>
+                        <span>Users</span>
+                    </a>
+                </li>  
+                <li>
+                    <a href="">
+                        <span class="ti-user"></span>
+                        <span>Profile</span>
+                    </a>
+                </li>   
+                <li>
+                    <a href="">
+                        <span class="ti-arrow-circle-right"></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>   
+    
+    <div class="main-content">
+        <header>
+            <div>
+                <span><img src="assets/img/logo.png" class="logo"></span>
+            </div>
+        </header>
+        <main>
+            <div class="dash-footer">
+                <div class="btn-container">   
+                    <p>Reports</p>                
+                    <button type="submit" (click)="modalService.showDialog = true">
+                        Export
+                    </button>                                      
+                </div>
+                <div class="btr">
+
+                    <div class="dropdown">
+                        <select name="All" id="" value="All" >
+                            <span>Tickets</span>
+                            <option value="All">All</option>
+                            <option value="Aging">Aging</option>
+                            <option value="Due Date">Due Date</option>
+                            <option value="Status">Status</option>
+                            <option type="radio" value="Category">Category</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="category">               
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                              <th>ID</th>
+                              <th>Subject</th>
+                              <th>Category</th>
+                              <th>Priority</th>
+                              <th>Status</th>
+                              <th>Due Date</th>
+                              <th>Actions</th>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Lorem Ipsum..</td>
+                              <td>Engagement (RNR)</td>
+                              <td>
+                                <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                            </td>
+                              <td>
+                                <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                            </td>
+                              <td>2023-04-29</td>
+                              <td>i</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Lorem Ipsum..</td>
+                              <td>Engagement (RNR)</td>
+                              <td>
+                                <span style="font-size:12px; padding:3px 9px; background-color: #B1DD9E; border: 3px solid #97CF8A; border-radius: 15px;">low</span>
+                            </td>
+                              <td>
+                                <span style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                            </td>
+                              <td>2023-04-29</td>
+                              <td>i</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 9px; background-color: #F7BE6D; border: 3px solid #FBB347; border-radius: 15px;">mid</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>5</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 9px; background-color: #F7BE6D; border: 3px solid #FBB347; border-radius: 15px;">mid</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 9px; background-color: #B1DD9E; border: 3px solid #97CF8A; border-radius: 15px;">low</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 9px; background-color: #B1DD9E; border: 3px solid #97CF8A; border-radius: 15px;">low</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>7</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>8</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:4.8px 6px; background-color: orangered; border-radius: 10px;">Ongoing</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>9</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+                              <tr>
+                                <td>10</td>
+                                <td>Lorem Ipsum..</td>
+                                <td>Engagement (RNR)</td>
+                                <td>
+                                    <span style="font-size:12px; padding:3px 7.8px; background-color: #FF8F8F; border: 3px solid #FF6B6B; border-radius: 15px;">high</span>
+                                </td>
+                                <td>
+                                    <span style="font-size:10px; padding:5px; background-color: rgb(6, 202, 49); border-radius: 10px;">Resolved</span>
+                                </td>
+                                <td>2023-04-29</td>
+                                <td>i</td>
+                              </tr>
+
+                          </table>
+                    </div>
+                </div>
+            </div>    
+        </main>
+    </div>
+
+</body>
+
+</html>
+
+

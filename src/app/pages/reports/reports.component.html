@@ -1,4 +1,4 @@
-
+<app-generatereports *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-generatereports>>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -64,7 +64,7 @@
             <div class="dash-footer">
                 <div class="btn-container">   
                     <p>Reports</p>                
-                    <button type="submit">
+                    <button type="submit" (click)="modalService.showDialog = true">
                         Export
                     </button>                                      
                 </div>

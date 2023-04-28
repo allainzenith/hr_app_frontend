@@ -16,6 +16,14 @@ import { CategorylistAdmnComponent } from './pages/categorylist-admn/categorylis
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { GeneratereportsComponent } from './components/generatereports/generatereports.component';
+import { ReportsadminComponent } from './pages/reportsadmin/reportsadmin.component';
+import { ReportlistsadminComponent } from './pages/reportlistsadmin/reportlistsadmin.component';
+import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
+import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
 import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
@@ -28,7 +36,7 @@ import { TicketThreadHrempComponent } from './pages/ticket-thread-hremp/ticket-t
 const routes: Routes = [
   { path: '', component: LoginSignupComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'reports', component: ReportsComponent },
+  { path: 'adminreports', component: ReportsadminComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'empheader', component: HeaderEmpComponent },
   { path: 'hrempheader', component: HeaderHrempComponent },
@@ -43,6 +51,13 @@ const routes: Routes = [
   { path: 'add-category' , component:AddCategoryComponent},
   { path: 'profile_emp' , component:ProfileComponent},
   { path: 'changepass' , component:ChangePasswordComponent},
+  { path: 'generatereports' , component:GeneratereportsComponent},
+  { path: 'reportlistsadmin' , component:ReportlistsadminComponent},
+  { path: 'edit-category' , component:EditCategoryComponent},
+  { path: 'add-users' , component:AddUsersComponent},
+  { path: 'userlhre' , component:UserListHrempComponent},
+  { path: 'userlhra' , component:UserListHradmComponent},
+  { path: 'editUser' , component:EditUsersComponent},
   { path: 'userlhre' , component:UserListHrempComponent},
   { path: 'userlhra' , component:UserListHradmComponent},
   { path: 'addU' , component:AddUsersComponent},
@@ -51,7 +66,7 @@ const routes: Routes = [
   { path: 'editUser' , component:EditUsersComponent},
   { path: 'ticket_threadAdm', component:TicketThreadAdmComponent},
   { path: 'ticket_threadHrE' , component:TicketThreadHrempComponent},
-  
+
 ];
 
 @NgModule({

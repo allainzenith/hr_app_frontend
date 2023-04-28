@@ -1,15 +1,20 @@
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+
+import { ModalserviceService } from 'src/app/service/modalservice.service';
+
 @Component({
   selector: 'app-categorylist-admn',
   templateUrl: './categorylist-admn.component.html',
   styleUrls: ['./categorylist-admn.component.css']
 })
+
 export class CategorylistAdmnComponent implements OnInit {
   response:any;
   tooltipText = 'hello'
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, public modalService: ModalserviceService){}
   ngOnInit(){
     this.getCategories();
   }

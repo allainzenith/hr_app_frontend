@@ -53,6 +53,7 @@
     justify-content: end;
 }
 
+
 .main .input-fields{
     width: calc(100% / 2 - 5px);
     padding: 12px;
@@ -69,6 +70,14 @@
     background-color: #ccc;
     color:#333;
 }
+
+.textarea-input{
+    justify-content: center;
+}
+.bastahaha{
+    padding: 20px;
+}
+
 
 .textarea-input{
 
@@ -163,6 +172,7 @@ select{
     width: 80%;
     margin-bottom: 1rem;
     color: #72777D;
+
 }
 
 .container {
