@@ -71,7 +71,7 @@
             <h2>Users</h2>
             <div class="table__body ">
 
-                <table>
+                <table *ngIf="response && response[0]">
                     <thead>
                         <tr>
                             <th> Id</th>
@@ -79,120 +79,17 @@
                             <th> Role</th>
                             <th> Email</th>
                             <th> Department</th>
-                            <th> Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
+                        <tr *ngFor="let data of response[0]">
+                            <td> {{ data?.empID }} </td>
+                            <td> {{ data?.name }}</td>
+                            <td> {{ data?.emp_role }}</td>
+                            <td> {{ data?.email }}</td>
+                            <td> {{ data?.department }}</td>
                         </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Jane Doe</td>
-                            <td> Hr Employee</td>
-                            <td> JaneDOe@gmail.com</td>
-                            <td> Human Resources</td>
-                            <td>
-                                <span class="ti-pencil"></span>
-                                <span class="ti-trash"></span>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                     <tfoot>
