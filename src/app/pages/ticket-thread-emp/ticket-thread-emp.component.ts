@@ -18,6 +18,10 @@ export class TicketThreadEmpComponent implements OnInit {
   response: any;
 
   thread_content = '';
+
+  header = this.emp_role();
+  isDisabled = false;
+  
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
   
   ngOnInit() {
@@ -44,6 +48,9 @@ export class TicketThreadEmpComponent implements OnInit {
       this.subject = queryParams['subject'];
     }
 
+    if(this.status == '3' || this.status == '2'){
+      this.isDisabled = true
+    }
     this.getThread();
   }
 
@@ -57,6 +64,17 @@ export class TicketThreadEmpComponent implements OnInit {
     }
 
     return token;
+  }
+
+  async emp_role(){
+    const emp_role = localStorage.getItem('emp_role');
+    if (emp_role) {
+      console.log('empID: '+emp_role);
+    } else {
+      // Handle the case where the token value is not present in localStorage
+    }
+
+    return emp_role;
   }
 
   async empID(){
@@ -134,6 +152,34 @@ export class TicketThreadEmpComponent implements OnInit {
       // Handle the error
     }
     
+
+  }
+
+  async cancelTicket(){
+    const token = await this.token();
+
+
+    const options = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
+    };
+
+    try {
+      const response = await this.http.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/3`, { options, observe: 'response' }).toPromise();
+      if (response !== undefined) {
+        console.log(response)
+        this.isDisabled = true
+      } else {
+        console.log('undefined')
+      }
+    } catch (error) {
+      console.log(error);
+      // Handle the error
+    }
+  }
+
+  markResolved(){
 
   }
   

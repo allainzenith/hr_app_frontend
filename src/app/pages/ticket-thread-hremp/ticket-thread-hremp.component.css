@@ -184,7 +184,7 @@ main{
     height: 35px;
     padding: 5px;
     border-radius: 25px;
-    background-color: red;
+    background-color: #4BD37B;
     border: 0;
     margin: .1rem 2.5rem 0 80%;
 
@@ -192,57 +192,109 @@ main{
 
 a{
     text-decoration: none;
-    color: white;
+    color: #222222;
 
 }
+.thread-container{
+    margin: 2rem 1rem 1rem 10rem;
+    width: 70%;
+    height: 80vh;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: #fff ;
 
-.table__body {
-    width: 95%;
-    max-height: calc(89% - 1.6rem);
-    background-color: #fffb;
-    border-radius: .6rem;
-    overflow: auto;
-    overflow: overlay;
+}
+hr{
+    margin-top: 1rem;
+    color: #777777;
 }
 
+table{
 
-table {
-    width: 100%;
-}
-
-table, th, td {
     border-collapse: collapse;
-    padding: .5rem;
-    text-align: center;
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+    color: #72777D;
 }
 
-thead th {
-    background-color: #d5d1defe;
-    cursor: pointer;
-    text-transform: capitalize;
+td{
+    padding: 3px;
+    vertical-align:top;
+    font-size: 14px;
 }
-
-tbody tr:nth-child(even) {
-    background-color: #0000000b;
+h3{
+    margin-left: 5%;
+    margin-bottom: 2%;
 }
-
-.status {
-    padding: .2rem 0;
-    border-radius: 2rem;
-    text-align: center;
+.status.pending {
+    background-color: #F05E16;
+    color: #fff;
 }
 
 .status.resolved {
+    background-color: rgb(6, 202, 49);
+    color: #fff;
+}
+
+.status {
+    padding: .1rem 0;
+    border-radius: 2rem;
+    text-align: center;
+    width: 20%;
+}
+input[type="date"]{
+    color: red;
+    border: none;
+    outline: none;
+}
+::-webkit-calendar-picker-indicator{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.thread2{
+    margin: 1rem;
+    height: 30vh;
+}
+.scroll{
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 15vh;
+}
+.thread2 p{
+    font-size: 14px;
     color: #222222;
-    background-color: #4BD37B;
+    margin-bottom: 2rem;
+    
 }
 
-.status.pending {
-    background-color: #F05E16;
+textarea{
+    margin-top: 2rem;
+    resize: none;
+    width: 100%;
+    height: 70px;
+    border: none;
+    background-color: #F0F6F7;
 }
-
-.status.shipped {
-    background-color: #6fcaea;
+.sbold{
+    font-weight: bold;
 }
-
-
+.sgray{
+    color: #72777D;
+}
+.italic{
+    font-style: italic;
+    font-weight: bold;
+}
+.thread2 .send{
+    margin-top: 10px;
+    margin-left: 92%;
+    width: 70px;
+    height: 30px;
+    border-radius: 6px;
+    color: white;
+    background-color: red;
+    border:none;
+}

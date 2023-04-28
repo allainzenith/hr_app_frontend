@@ -71,6 +71,7 @@
             <h2>Users</h2>
             <div class="table__body ">
 
+
                 <table *ngIf="response && response[0]">
                     <thead>
                         <tr>
@@ -79,6 +80,7 @@
                             <th> Role</th>
                             <th> Email</th>
                             <th> Department</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -89,7 +91,7 @@
                             <td> {{ data?.email }}</td>
                             <td> {{ data?.department }}</td>
                         </tr>
-                        
+        
                         
                     </tbody>
                     <tfoot>
@@ -104,3 +106,4 @@
 </body>
 
 </html>
+

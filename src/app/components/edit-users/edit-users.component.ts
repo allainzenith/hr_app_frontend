@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { ModalserviceService } from 'src/app/service/modalservice.service';
+
 
 @Component({
   selector: 'app-edit-users',
@@ -11,4 +13,5 @@ constructor(public modalService: ModalserviceService){}
   ngOnInit(){
 
   }
+
 }

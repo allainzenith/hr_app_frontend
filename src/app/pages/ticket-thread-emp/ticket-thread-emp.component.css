@@ -187,7 +187,19 @@ main{
     background-color: red;
     border: 0;
     margin: .1rem 2.5rem 0 80%;
+    color: #fff;
 
+}
+
+.resolveTicket{
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: green;
+    border: 0;
+    margin: .1rem 2.5rem 0 80%;
+    color: #fff;
 }
 
 a{
@@ -237,6 +249,11 @@ h3{
     color: #fff;
 }
 
+.status.cancelled {
+    background-color: red;
+    color: #fff;
+}
+
 .status {
     padding: .1rem 0;
     border-radius: 2rem;
@@ -259,9 +276,6 @@ input[type="date"]{
     overflow-y: scroll;
     margin: 1rem;
     height: 30vh;
-}
-::-webkit-scrollbar{
-    display: none;
 }
 .thread2 p{
     font-size: 14px;
@@ -297,3 +311,9 @@ textarea{
     background-color: red;
     border:none;
 }
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

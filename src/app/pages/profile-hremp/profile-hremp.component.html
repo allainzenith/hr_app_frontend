@@ -1,5 +1,4 @@
-<app-change-password *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-change-password>
-
+<!-- <app-add-ticket *ngIf="modalService.showDialog" style="z-index: 150; height: 100%; margin: 0 auto;"></app-add-ticket> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,25 +16,37 @@
             <h3 class="brand">
                 <span>Jane Dae</span>
             </h3>
-            <p>Employee</p>
+            <p>Hr Employee</p>
             <label for="sidebar-toggle" class="ti-menu-alt"></label>
         </div>
         <div class="sidebar-menu">
             <ul>
-                <li>
-                    <a href="/employee/tickets">
+                <li routerLink="/hrdashboard">
+                    <a>
                         <span class="ti-home"></span>
-                        <span>Tickets</span>
+                        <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a>
+                        <span class="ti-receipt "></span>
+                        <span>Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <span class="ti-id-badge"></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a>
                         <span class="ti-user"></span>
                         <span>Profile</span>
                     </a>
                 </li>   
                 <li>
-                    <a href="">
+                    <a>
                         <span class="ti-arrow-circle-right"></span>
                         <span>Logout</span>
                     </a>
@@ -63,7 +74,7 @@
                             <div class="head-img"></div>
                             <div>
                                 <p class="name">Jane Doe</p>
-                                <p class="grey">Employee, Engineer</p>
+                                <p class="grey">HR Employee, Engineer</p>
                                 <p class="grey1">janedoe@gmail.com</p>
                             </div>
                     </div>
@@ -72,7 +83,7 @@
                             <p>Name</p>
                             <input type="text" disabled value="Jane Doe">
                             <p>Role</p>
-                            <input type="text" disabled value="Employee">
+                            <input type="text" disabled value="HR Employee">
                         </div>
                         <div>
                             <p>Email Address</p>
@@ -82,8 +93,7 @@
                             <input type="text" disabled value="Engineering">
                         </div>
                     </div>
-                    <button type="submit" (click)="modalService.showDialog = true">Change Password</button>
-
+                    <button type="submit">Change Password</button>
                 </div> 
             </div>    
         </main>

@@ -31,6 +31,14 @@ import { AddUsersComponent } from './components/add-users/add-users.component';
 import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
 import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
 import { EditUsersComponent } from './components/edit-users/edit-users.component';
+import { UserListHrempComponent } from './pages/user-list-hremp/user-list-hremp.component';
+import { UserListHradmComponent } from './pages/user-list-hradm/user-list-hradm.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
+import { ProfileHrempComponent } from './pages/profile-hremp/profile-hremp.component';
+import { ProfileHradmComponent } from './pages/profile-hradm/profile-hradm.component';
+import { EditUsersComponent } from './components/edit-users/edit-users.component';
+import { TicketThreadAdmComponent } from './pages/ticket-thread-adm/ticket-thread-adm.component';
+import { TicketThreadHrempComponent } from './pages/ticket-thread-hremp/ticket-thread-hremp.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +70,15 @@ import { EditUsersComponent } from './components/edit-users/edit-users.component
     AddUsersComponent,
     UserListHrempComponent,
     UserListHradmComponent,
-    EditUsersComponent
+    EditUsersComponent,
+    UserListHrempComponent,
+    UserListHradmComponent,
+    AddUsersComponent,
+    ProfileHrempComponent,
+    ProfileHradmComponent,
+    EditUsersComponent,
+    TicketThreadAdmComponent,
+    TicketThreadHrempComponent
   ],
   imports: [
     BrowserModule,
