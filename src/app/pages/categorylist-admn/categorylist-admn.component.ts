@@ -79,4 +79,8 @@ export class CategorylistAdmnComponent implements OnInit {
   deleteCategory(categoryID:any){
     //
   }
+
+  showModal(){
+    this.modalService.showDialog = true
+  }
 }

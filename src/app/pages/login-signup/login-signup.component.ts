@@ -9,6 +9,8 @@ import 'zone.js';
   styleUrls: ['./login-signup.component.css']
 })
 export class LoginSignupComponent {
+  hidden = true;
+  recoverhidden = true;
   forgotPass = false;
   constructor(
     private http: HttpClient, private router: Router
@@ -18,6 +20,7 @@ export class LoginSignupComponent {
   
   async signIn(email: HTMLInputElement, password: HTMLInputElement) {
     // http request
+    
     console.log(email.value)
     console.log(password.value)
     
@@ -68,12 +71,14 @@ export class LoginSignupComponent {
 
           else {
             console.log('undefined')
+            this.hidden = false;
           }
         }
       }
     } catch (error) {
       console.log(error);
       // Handle the error
+      this.hidden = false;
     }
   }
   
@@ -128,30 +133,28 @@ export class LoginSignupComponent {
 
     //this.signIn()
 
-    // const credentials = {
-    //   'email': email.toString(),
-    //   'password': pin.toString()
-    // }
+    const credentials = {
+      'email': forgotemail.value.toString(),
+      'password': pin.toString()
+    }
 
-    // const credentials = {
-    //   'email': 'janedae@gmail.com',
-    //   'password': '1234'
-    // }
 
-    // try {
-    //   const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/employee/recoverPassword`, credentials, { headers, observe: 'response' }).toPromise();
-    //   if (response !== undefined) {
-    //     if(response.status as any == 200){
-    //       console.log(response)
-    //     }
+    try {
+      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/mail/forgotPassword`, credentials, { headers, observe: 'response' }).toPromise();
+      if (response !== undefined) {
+        if(response.status as any == 200){
+          console.log(response)
+        }
 
-    //   } else {
-    //     console.log('undefined')
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   // Handle the error
-    // }
+      } else {
+        console.log('undefined')
+      }
+
+      this.recoverhidden = false;
+    } catch (error) {
+      console.log(error);
+      // Handle the error
+    }
   }
 
   generateSixDigitPin() {

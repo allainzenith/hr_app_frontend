@@ -22,27 +22,27 @@
                 </div> -->
                 <div class="prof-container">
                     <p class="title">Profile Settings</p>
-                    <div class="prof-head">
+                    <div class="prof-head" *ngIf="response && response[0]">
                             <div class="head-img"></div>
                             <div>
-                                <p class="name">Jane Doe</p>
-                                <p class="grey">Employee, Engineer</p>
-                                <p class="grey1">janedoe@gmail.com</p>
+                                <p class="name">{{response[0][0].name}}</p>
+                                <p class="grey">{{role}}, {{response[0][0].department}}</p>
+                                <p class="grey1">{{response[0][0].email}}</p>
                             </div>
                     </div>
-                    <div class="section">
-                        <div class="top-section">
+                    <div class="section" *ngIf="response && response[0]">
+                        <div class="top-section" *ngFor="let data of response[0]">
                             <p>Name</p>
-                            <input type="text" disabled value="Jane Doe">
+                            <input type="text" disabled value="{{response[0][0].name}}">
                             <p>Role</p>
-                            <input type="text" disabled value="Employee">
+                            <input type="text" disabled value="{{role}}">
                         </div>
                         <div>
                             <p>Email Address</p>
-                            <input type="text" disabled value="janedoe@gmail.com">
+                            <input type="text" disabled value="{{response[0][0].email}}">
                             
-                            <p>Deparment</p>
-                            <input type="text" disabled value="Engineering">
+                            <p>Department</p>
+                            <input type="text" disabled value="{{response[0][0].department}}">
                         </div>
                     </div>
                     <button type="submit" (click)="modalService.showDialog = true">Change Password</button>

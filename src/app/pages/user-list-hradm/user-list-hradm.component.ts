@@ -88,7 +88,7 @@ export class UserListHradmComponent {
       })
     };
     
-      this.http.delete(`http://192.168.77.104:8080/spring-hibernate-jpa/employee/delete/${empID}`, options).subscribe();
+      this.http.delete(`http://localhost:8080/spring-hibernate-jpa/employee/delete/${empID}`, options).subscribe();
       this.router.navigate(['/userlhra'])
     } 
   }

@@ -11,4 +11,8 @@ export class GeneratereportsComponent {
   ngOnInit(){
 
   }
+
+  exportPdf(){
+    window.open(`http://localhost:8080/spring-hibernate-jpa/file/Transmittal%20Letter.pdf`)
+  }
 }

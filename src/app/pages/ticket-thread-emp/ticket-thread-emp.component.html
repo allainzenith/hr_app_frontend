@@ -53,12 +53,13 @@
                 </div>
                 <div *ngIf="response && response[0]">
                     <div class="thread2">
-                        <p>Jane Doe created this ticket. <span class="sgray">2 days ago</span></p>
+                        <p>{{name}} created this ticket. <span class="sgray"></span></p>
                         <p *ngFor="let thread of response[0]"><span class="sbold">Update: </span>{{ thread?.thread_content }} | <span class="sgray">{{ thread?.created_at }}</span></p>    
                         <div>
                             <textarea name="thread_content" [(ngModel)]="thread_content" [disabled]="isDisabled" placeholder="Provide a feed back"></textarea><br>
                             <button class="send" (click) = "updateTicketThread()" [disabled]="isDisabled">Send</button> 
                         </div>
+                    
                     </div>
 
                 </div>

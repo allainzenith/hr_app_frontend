@@ -17,6 +17,7 @@
                 <h4>Send us your email so we can help you.</h4>
                 <input type="email" placeholder="Email" #forgotemail/>
                 <button (click)="forgotPassword(forgotemail)">Send Email</button>
+                <span style="color:red"[hidden]="recoverhidden">Thank you! If this email exists, an email will be sent to you.</span>
             </form>
         </div>
         <div class="form-container sign-in-container">
@@ -27,6 +28,8 @@
                 <input type="password" placeholder="Password" #password/>
                 <!-- <button type="submit">Log In</button> -->
                 <button (click)="signIn(email, password)">Log In</button>
+                <br><br>
+                <span style="color:red"[hidden]="hidden">User Does Not Exist!</span>
             </div>
         </div>
         <div class="overlay-container">

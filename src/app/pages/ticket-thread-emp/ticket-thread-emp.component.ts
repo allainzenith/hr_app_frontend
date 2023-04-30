@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import axios from 'axios';
 @Component({
   selector: 'app-ticket-thread-emp',
   templateUrl: './ticket-thread-emp.component.html',
@@ -21,10 +21,11 @@ export class TicketThreadEmpComponent implements OnInit {
 
   header = this.emp_role();
   isDisabled = false;
+  name:any;
   
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
   
-  ngOnInit() {
+  async ngOnInit() {
     const queryParams = this.route.snapshot.queryParams;
     if (queryParams['ticketID']) {
       this.ticketID = queryParams['ticketID'];
@@ -52,10 +53,23 @@ export class TicketThreadEmpComponent implements OnInit {
       this.isDisabled = true
     }
     this.getThread();
+    this.name = await this.emp_name();
+  }
+
+  async emp_name(){
+    const emp_name = localStorage.getItem('name');
+    if (emp_name) {
+      console.log('name: '+emp_name);
+    } else {
+      // Handle the case where the token value is not present in localStorage
+      console.log('cant see')
+    }
+    this.name = emp_name;
+    return emp_name;
   }
 
   async token(){
-    const token = localStorage.getItem('token');
+    const token = await localStorage.getItem('token');
     if (token) {
       // Use the token value here
       console.log('token: '+token);
@@ -94,7 +108,7 @@ export class TicketThreadEmpComponent implements OnInit {
 
     const options = {
       headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
+        'Authorization': `Bearer ${token}` 
       })
     };
 
@@ -132,17 +146,16 @@ export class TicketThreadEmpComponent implements OnInit {
 
 
     try {
-      const options = {
-        headers: new HttpHeaders({
-          'Authorization': 'Bearer ' + token
-        })
-      };
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      });
       
-      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/ticketthread/updateticketthread`, formData, options).toPromise();
+      const response = await this.http.post(`http://localhost:8080/spring-hibernate-jpa/ticketthread/updateticketthread`, formData, { headers, observe: 'response' }).toPromise();
       
       if (response instanceof HttpResponse) {
         if (response.status === 200) {
           console.log(response.status);
+          location.replace(location.href);
         } else {
           console.log(`Server returned status code ${response.status}`);
         }
@@ -161,49 +174,89 @@ export class TicketThreadEmpComponent implements OnInit {
 
   async cancelTicket(){
     const token = await this.token();
-
-
     const options = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-
-    try {
-      const response = await this.http.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/3`, { options, observe: 'response' }).toPromise();
-      if (response !== undefined) {
-        console.log(response)
-        this.isDisabled = true
-      } else {
-        console.log('undefined')
+      headers:{
+        Authorization: `Bearer ${token}`
       }
-    } catch (error) {
-      console.log(error);
-      // Handle the error
+    };
+      const data = {};
+    try{
+      axios.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/3`, data, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        // handle response
+        console.log(response);
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
+      // const response = await axios.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/3`, options);
+      // const loadingPromise = new Promise(resolve => setTimeout(resolve, 2000));
+
+      // return await Promise.all([response,loadingPromise])
+      // .then(([response]) =>{
+      //   console.log(response);
+      //   this.isDisabled = true;
+      //   location.replace(location.href);
+      // }).catch(error =>{
+      //   console.log(error);
+      // });
+    }catch(error){
+      console.error(error);
     }
+
+    // const options = {
+    //   headers: new HttpHeaders({
+    //     'Authorization': `Bearer ${token}`
+    //   })
+    // };
+
+    // try {
+    //   const response = await this.http.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/3`, { options, observe: 'response' }).toPromise();
+    //   if (response !== undefined) {
+    //     console.log(response)
+    //     this.isDisabled = true
+    //     location.replace(location.href);
+    //   } else {
+    //     console.log('undefined')
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   // Handle the error
+    // }
   }
 
   async markResolved(){
     const token = await this.token();
-
-
     const options = {
-      headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + token
-      })
-    };
-
-    try {
-      const response = await this.http.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/2`, { options, observe: 'response' }).toPromise();
-      if (response !== undefined) {
-        console.log(response)
-        this.isDisabled = true
-      } else {
-        console.log('undefined')
+      headers:{
+        Authorization: `Bearer ${token}`
       }
-    } catch (error) {
-      console.log(error);
-      // Handle the error
+    };
+      const data = {};
+    try{
+      axios.put(`http://localhost:8080/spring-hibernate-jpa/ticket/updatestatus/${this.ticketID}/2`, data, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        // handle response
+        console.log(response);
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
+
+    }catch(error){
+      console.error(error);
     }
   }
   
